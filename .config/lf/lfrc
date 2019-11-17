@@ -1,0 +1,21 @@
+set shell zsh
+set shellopts '--shwordsplit'
+set ifs "\n"
+
+## cd
+map gm cd ~/media
+map gp cd ~/projects
+map gb cd ~/build
+map gM cd /run/media/me
+
+cmd wall $feh --bg-fill $fx
+
+#set hidden! on
+#set icons on
+
+#cmd open &{{
+#    case $(file --mime-type "$f" -b) in
+#        text/*) setsid /home/$USER/.config/lf/emc $f;;
+#	video/*) setsid mpv $f > /dev/null 2 2>&1 & ;;
+#        *) for f in $f; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+#    esac }}
