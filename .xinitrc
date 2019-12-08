@@ -1,19 +1,18 @@
 # Statusbar loop
 while true; do
-   xsetroot -name "$( date +" [%F] [%R] " )"
-   sleep 1m    # Update time every minute
+   xsetroot -name "[$(cat /sys/class/power_supply/BAT0/capacity)] $( date +" [%F] [%R] " )"
+   sleep 60    # Update time every minute
 done &
 
 # Autostart section
-sh ~/.fehbg & 
-#compton &
+nitrogen --restore &
 numlockx &
-mpd &
-dunst > /dev/null 2>&1 &
-xrdb ~/.Xresources &
+# qbittorrent-nox &
+#mpd &
+#dunst > /dev/null 2>&1 &
+xrdb ~/.Xresources
 
 while true; do
 	dwm 2> ~/.dwm.log
 	dwm >/dev/null 2>&1
 done
-

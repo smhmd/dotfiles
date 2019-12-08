@@ -2,64 +2,65 @@
 # Files #
 #########
 
-alias zshrc="nvim ~/.zshrc"
-alias zshsource="source ~/.zshrc"
-alias aliasrc="nvim ~/.config/aliasrc"
-alias dwmrc="nvim ~/build/dwm/config.h"
-alias dwmdir="code ~/build/dwm/ && exit"
-alias dwmmake="cd ~/build/dwm/ ;sudo make clean install; cd -"
-alias stdir="code ~/build/st/ && exit"
-alias stmake="cd ~/build/st/ ;sudo make clean install; cd -"
-alias keysyms="code ~/code/config-files/keysyms"
-alias lfdoc="lf -doc | less"
-alias lfrc="nvim ~/.config/lf/lfrc"
-alias xinitrc="nvim ~/.xinitrc"
-alias ncmrc="nvim ~/.config/ncmpcpp/config"
-alias mpvrc="nvim ~/.config/mpv/mpv.conf"
-alias mpvinp="nvim ~/.config/mpv/input.conf"
-alias swayrc="nvim ~/.config/sway/config"
+alias -g zshrc="~/.zshrc"
+alias -g aliasrc="~/.config/aliasrc"
+alias -g securealiasrc="~/.config/securealiasrc"
+alias -g dwmrc="~/build/dwm/config.h"
+alias -g lfrc="~/.config/lf/lfrc"
+alias -g xinitrc="~/.xinitrc"
+alias -g ncmrc="~/.config/ncmpcpp/config"
+alias -g mpvrc="~/.config/mpv/mpv.conf"
+alias -g mpvinp="~/.config/mpv/input.conf"
+alias -g vimrc="~/.vimrc"
+alias -g mimerc="~/.config/mimi/mime.conf"
+alias -g o="<"
+
+alias -s {conf,h,c,config,lfrc}=nvim
 
 ############
 # Commands #
 ############
 
-#alias compton="compton --config ~/.config/compton.conf"
-alias ls='exa -1'
-alias ll='exa -l'
-alias la='exa -la'
+alias zshrcs="source ~/.zshrc"
 
-alias pac="sudo pacman -S"
+alias dwmmake="cd ~/build/dwm/ ;sudo make clean install; cd -"
+
+alias ls='exa -1 --group-directories-first'
+alias ll='exa -l --git --group-directories-first'
+alias la='exa -la --git --group-directories-first'
+
+alias pac="sudo pacman -S --needed"
 alias pacs="sudo pacman -Ss"
 alias pacy="sudo pacman -Sy"
 alias pacyu="sudo pacman -Syu"
 alias pacr="sudo pacman -R"
 alias pacrns="sudo pacman -Rns"
 
-alias aur="yay -S"
+alias aur="yay -S --needed"
 alias aurs="yay -Ss"
 alias aury="yay -Sy"
 alias auryu="yay -Syu"
 alias aurr="yay -R"
 alias aurrns="yay -Rns"
 
-alias batt="upower -i $(upower -e | grep BAT) | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
-alias serve="npm run serve" 
-alias gserve="gridsome develop"
+alias batt="acpi -b"
 alias aria="aria2c -x8 --allow-overwrite"
-alias setvol="amixer -c 1 set Master"
 alias connected="ping google.com"
+alias fan-status="bat -p /proc/acpi/ibm/fan"
 alias c="code"
 alias peerflix="peerflix -kd"
 alias ncm="ncmpcpp"
-alias ultra="sudo pkill compton && sudo pkill mpd"
 alias ffrec="ffmpeg -y -f x11grab -s 1366x768 -i :0.0 out.mkv"
-alias guest="chromium --guest"
-alias copyshot="import png:- | xclip -selection clipboard -t image/png"
+alias screenshottoclipboard="import png:- | xclip -selection clipboard -t image/png"
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-alias tmptoarticles="mv /tmp/*.html ~/media/articles"
+
+alias yamete="docker run --rm -ti -v ~/media/books/.x:/app/downloads -u 1000:1000 jaymoulin/yamete download -p -u"
+alias yamete-list="docker run --rm -ti -v ~/media/books/.x:/app/downloads -v ~/.buffers/yamete:/app/list -u 1000:1000 jaymoulin/yamete download -p -l /app/list"
+alias yamete-load='echo $(xclip -selection primary -o) >> ~/.buffers/yamete'
+
 alias unix="~/.rice/unix"
-alias q="exit"
+
 #################
 # Configuration #
 #################
@@ -67,5 +68,3 @@ alias q="exit"
 alias vuedotfiles="aria2c -Z --allow-overwrite 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/vue/.prettierrc.js' 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/vue/.eslintrc.js'; mkdir .vscode; cd ./.vscode; aria2c --allow-overwrite 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/vue/.vscode/pug-html.code-snippets'"
 alias gridsomedotfiles="yarn add eslint eslint-config-prettier eslint-plugin-gridsome vue-eslint-parser; aria2c -Z --allow-overwrite 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/gridsome/.eslintrc.js' 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/gridsome/.prettierrc.js'"
 
-
-alias fan-status="bat -p /proc/acpi/ibm/fan"

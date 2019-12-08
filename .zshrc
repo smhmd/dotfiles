@@ -12,17 +12,15 @@ setopt autocd                                                   # if only direct
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+zstyle ':completion:*' rehash true                              # automatically find new executables in path
 # Speed up completions
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 HISTFILE=~/.zhistory
-HISTSIZE=1000
-SAVEHIST=500
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-export TERM="st"
+HISTSIZE=10000
+SAVEHIST=10000
+
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 
@@ -34,7 +32,7 @@ if [[ "${terminfo[khome]}" != "" ]]; then
   bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
 fi
 bindkey '^[[8~' end-of-line                                     # End key
-bindkey '^[[F' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                      # End key
 if [[ "${terminfo[kend]}" != "" ]]; then
   bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
 fi
@@ -53,20 +51,24 @@ bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
-## Alias section 
+## Alias section
 alias cp="cp -i"                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 alias gitu='git add . && git commit && git push'
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+[ -f "$HOME/.config/securealiasrc" ] && source "$HOME/.config/securealiasrc"
 
-# Theming section  
+# Theming section
 autoload -U compinit colors zcalc
 compinit -d
 colors
 
 # enable substitution for prompt
 setopt prompt_subst
+
+# hidden files in autocompletion
+_comp_options+=(globdots)
 
 # Prompt (on left side) similar to default bash prompt, or redhat zsh prompt with colors
  #PROMPT="%(!.%{$fg[red]%}[%n@%m %1~]%{$reset_color%}# .%{$fg[green]%}[%n@%m %1~]%{$reset_color%}$ "
@@ -127,16 +129,16 @@ parse_git_state() {
 
 git_prompt_string() {
   local git_where="$(parse_git_branch)"
-  
+
   # If inside a Git repository, print its branch and state
   [ -n "$git_where" ] && echo "$GIT_PROMPT_SYMBOL$(parse_git_state)$GIT_PROMPT_PREFIX%{$fg[yellow]%}${git_where#(refs/heads/|tags/)}$GIT_PROMPT_SUFFIX"
-  
+
   # If not inside the Git repo, print exit codes of last command (only if it failed)
   [ ! -n "$git_where" ] && echo "%{$fg[red]%} %(?..[%?])"
 }
 
 # Right prompt with exit status of previous command if not successful
- #RPROMPT="%{$fg[red]%} %(?..[%?])" 
+ #RPROMPT="%{$fg[red]%} %(?..[%?])"
 # Right prompt with exit status of previous command marked with ✓ or ✗
  #RPROMPT="%(?.%{$fg[green]%}✓ %{$reset_color%}.%{$fg[red]%}✗ %{$reset_color%})"
 
@@ -146,7 +148,7 @@ export LESS_TERMCAP_mb=$'\E[01;32m'
 export LESS_TERMCAP_md=$'\E[01;32m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_so=$'\E[01;40;34m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-r
@@ -164,20 +166,20 @@ source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey '^[[A' history-substring-search-up			
+bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Apply different settigns for different terminals
 case $(basename "$(cat "/proc/$PPID/comm")") in
   login)
-    	RPROMPT="%{$fg[red]%} %(?..[%?])" 
+    	RPROMPT="%{$fg[red]%} %(?..[%?])"
     	alias x='startx ~/.xinitrc'      # Type name of desired desktop after x, xinitrc is configured for it
     ;;
 #  'tmux: server')
 #        RPROMPT='$(git_prompt_string)'
 #		## Base16 Shell color themes.
 #		#possible themes: 3024, apathy, ashes, atelierdune, atelierforest, atelierhearth,
-#		#atelierseaside, bespin, brewer, chalk, codeschool, colors, default, eighties, 
+#		#atelierseaside, bespin, brewer, chalk, codeschool, colors, default, eighties,
 #		#embers, flat, google, grayscale, greenscreen, harmonic16, isotope, londontube,
 #		#marrakesh, mocha, monokai, ocean, paraiso, pop (dark only), railscasts, shapesifter,
 #		#solarized, summerfruit, tomorrow, twilight
@@ -200,22 +202,24 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     ;;
 esac
 
-# NPM without sudo
+# ENV
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+export TERM="st"
+export PODCAST="$HOME/media/podcasts"
+
+# set
 NPM_PACKAGES="${HOME}/.npm-packages"
 
-export PATH="$PATH:$NPM_PACKAGES/bin"
-
-# Preserve MANPATH if you already defined it somewhere in your config.
-# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
-export PATH="$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# PATH
+export PATH="$PATH:$NPM_PACKAGES/bin" # NPM without sudo
+export PATH="$HOME/.basher/bin:$PATH" # Basher
+export PATH="$HOME/.gem/ruby/3.6.0/bin:$PATH" # Ruby
+export PATH="$HOME/.cargo/bin:$PATH" # Cargo
+export PATH="$HOME/.local/share/anaconda3/bin:$PATH" # Anaconda
 
-#basher
-export PATH="$HOME/.basher/bin:$PATH"
 eval "$(basher init -)"
-
-#gem
-export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh

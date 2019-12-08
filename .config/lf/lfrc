@@ -1,21 +1,34 @@
 set shell zsh
-set shellopts '--shwordsplit'
+set shellopts --shwordsplit
 set ifs "\n"
+set info size
+set dircounts on
+set color256 on
+set wrapscroll on
+set incsearch on
 
-## cd
-map gm cd ~/media
-map gp cd ~/projects
-map gb cd ~/build
-map gM cd /run/media/me
+map g.c cd ~/.config
+map g.a cd ~/.android
+map g.l cd ~/.local
+map gM cd ~/media
+map ga cd ~/media/articles
+map gb cd ~/media/books
+map gc cd ~/media/courses
+map gf cd ~/media/film
+map gl cd ~/media/lectures
+map gm cd ~/media/music
+map gp cd ~/media/pix
+map gw cd ~/media/pix/wallpapers
+map gt cd ~/media/talks
+map grm cd /run/media/me
+map grt cd /tmp
 
+map D :delete
+cmap <up> cmd-history-prev
+cmap <down> cmd-history-next
+
+cmd open &setsid xdg-open $fx
 cmd wall $feh --bg-fill $fx
-
-#set hidden! on
-#set icons on
-
-#cmd open &{{
-#    case $(file --mime-type "$f" -b) in
-#        text/*) setsid /home/$USER/.config/lf/emc $f;;
-#	video/*) setsid mpv $f > /dev/null 2 2>&1 & ;;
-#        *) for f in $f; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
-#    esac }}
+cmd vdir $vidir
+cmd mpv &setsid mpv $fx
+cmd configadd $/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME add $fx

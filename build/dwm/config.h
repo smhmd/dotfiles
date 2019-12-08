@@ -18,7 +18,8 @@ static const char col_gray2[]       = "#333333";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#ccc";
 static const char col_primary[]     = "#1d1f21";
-static const char col_active[]      = "#bbb";
+// static const char col_active[]      = "#bbb";
+static const char col_active[]      = "#fff";
 static const char col_inactive[]    = "#333";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -46,8 +47,8 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[┼]",        tile },    /* first entry is default */
+	{ "[▒]",        NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -96,6 +97,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,        setgaps,        {.i = -5 } },
 	{ MODKEY,                       XK_equal,        setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_equal,        setgaps,        {.i = 0  } },
+	{ MODKEY|ShiftMask,             XK_x,            spawn,          SHCMD("echo 'shutdown now\nreboot' | dmenu -fn 'monospace:size=9' -nf '#333' -sb '#cc6666' -nb '#a54242' -sf '#282a2e' | zsh") },
 
 	{ MODKEY,	                XK_Return, 	 spawn,          {.v = termcmd } },
 	{ MODKEY,                    	XK_d,      	 spawn,          {.v = dmenucmd } },
@@ -108,7 +110,7 @@ static Key keys[] = {
 	{ 0,                         	0x1008FF11,	 spawn,          SHCMD("pactl set-sink-volume 0 -5%") }, // vol down 5
 	{ 0,                         	0x1008FF12,	 spawn,          SHCMD("mpc toggle") }, // toggle play pause
 	{ 0,                         	0x1008FF02,	 spawn,          SHCMD("xbacklight -inc 10") }, // increase volume
-	{ 0,                         	0x1008FF03,	 spawn,          SHCMD("xbacklight -dec 10") }, // decrease volume
+	{ 0,                         	0x1008FF03,	 spawn,          SHCMD("xbacklight -dec 9") }, // decrease volume
 	{ 0,                         	0x1008ff59,	 spawn,          SHCMD("imgur-screenshot") }, // take screenshot and upload to imgur
 
 	TAGKEYS(                     	XK_exclam,       0)
