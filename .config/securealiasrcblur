@@ -1,0 +1,1 @@
+alias chdownload='cd ~/media/courses/ && node ~/build/ch-download/index.js -e alivefromupstairs@gmail.com -p XXXXXXXXXXX -u'

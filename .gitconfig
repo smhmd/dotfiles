@@ -1,0 +1,10 @@
+[user]
+	email = alivefromupstairs@gmail.com
+	name = alivefromupstairs
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
