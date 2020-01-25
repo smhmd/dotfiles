@@ -1,11 +1,58 @@
+set guioptions none                                               # remove statusbar
+set font "Iosevka 9"
+#set render-loading "false"
+
+set adjust-open "width"
+set recolor-keephue "true"
+#set recolor "true"
+#set recolor-reverse-video "true"
+
+#set scroll-page-aware "true"
+#set scroll-full-overlap 0.01
+#set scroll-step 20
+
+set statusbar-fg "#f2e5bc"
+set statusbar-bg "#282828"
+
+set inputbar-fg "#FFFFFF"
+set default-bg '#282828'
+
+#set recolor-lightcolor \#282828
+#set recolor-darkcolor \#f2e5bc
+
+set notification-error-bg "#AC4142"
+set notification-error-fg "#151515"
+
+set notification-warning-bg "#AC4142"
+set notification-warning-fg "#151515"
+
+set highlight-color "#F4BF75"
+set highlight-active-color "#6A9FB5"
+
+set completion-highlight-fg "#151515"
+set completion-highlight-bg "#90A959"
+
+set completion-bg "#303030"
+set completion-fg "#E0E0E0"
+
+set notification-bg "#90A959"
+set notification-fg "#151515"
+
 set statusbar-h-padding 0
 set statusbar-v-padding 0
+
 set page-padding 0
-set incremental-search "true"
-# set show-scrollbars true
+
+set incremental-search "true"                                     # search on keystroke
+set selection-clipboard clipboard                                 # use primary clipboard
+#set show-scrollbars true
 
 map D toggle_page_mode
 map r reload
 map R rotate
 map i recolor
 map p print
+
+map t feedkeys ":set default-bg \#282828<Return>"                 # set background to black (t key)
+map T feedkeys ":set default-bg '#ffffff'<Return>"                # set background to white (shif+t key)
+map ' feedkeys ":set recolor-keephue<Return>"
