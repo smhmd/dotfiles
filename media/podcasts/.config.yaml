@@ -1,2 +1,4 @@
 ---
+download_subscription_limit: 0
 auto_download_limit: 0
+quiet: true
