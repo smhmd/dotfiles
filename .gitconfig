@@ -8,3 +8,5 @@
 	branch = auto
 	interactive = auto
 	ui = true
+[core]
+	editor = /usr/bin/nvim
