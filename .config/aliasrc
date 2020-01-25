@@ -59,35 +59,31 @@ alias pacyu="sudo pacman -Syu"
 alias pacr="sudo pacman -R"
 alias pacrns="sudo pacman -Rns"
 
-alias aur="yay -S --needed"
+alias aur="yay -S --needed --noconfirm"
 alias aurs="yay -Ss"
 alias aury="yay -Sy"
-alias auryu="yay -Syu"
+alias auryu="yay -Syu --devel"
+alias auryun="yay -Syu --devel --noconfirm"
 alias aurr="yay -R"
 alias aurrns="yay -Rns"
 
 alias batt="acpi -b"
 alias aria="aria2c -x8 --allow-overwrite"
-alias connected="ping google.com"
+alias connected="ping -c 2 google.com"
+alias connectedn="nmtui-connect"
 alias fan-status="bat -p /proc/acpi/ibm/fan"
 alias c="code"
 alias peerflix="peerflix -kd"
 alias ncm="ncmpcpp"
 alias ffrec="ffmpeg -y -f x11grab -s 1366x768 -i :0.0 out.mkv"
 alias screenshottoclipboard="import png:- | xclip -selection clipboard -t image/png"
+alias rename-2-kebabcase="node ~/build/rename-2-kebabcase/index.js"
+alias ascii="< ~/build/ascii | dmenu -l 30 | awk \'{print $2}\'"
 
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 alias yamete="docker run --rm -ti -v ~/media/books/.x:/app/downloads -u 1000:1000 jaymoulin/yamete download -p -u"
 alias yamete-list="docker run --rm -ti -v ~/media/books/.x:/app/downloads -v ~/.buffers/yamete:/app/list -u 1000:1000 jaymoulin/yamete download -p -l /app/list"
 alias yamete-load='echo $(xclip -selection primary -o) >> ~/.buffers/yamete'
 
-alias unix="~/.rice/unix"
-
-#################
-# Configuration #
-#################
-
-alias vuedotfiles="aria2c -Z --allow-overwrite 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/vue/.prettierrc.js' 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/vue/.eslintrc.js'; mkdir .vscode; cd ./.vscode; aria2c --allow-overwrite 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/vue/.vscode/pug-html.code-snippets'"
-alias gridsomedotfiles="yarn add eslint eslint-config-prettier eslint-plugin-gridsome vue-eslint-parser; aria2c -Z --allow-overwrite 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/gridsome/.eslintrc.js' 'https://raw.githubusercontent.com/alivefromupstairs/config-files/master/vscode/gridsome/.prettierrc.js'"
-
+alias 4chan="~/build/4chan-downloader/inb4404.py -cdln"
+alias glow="glow -s dark"
