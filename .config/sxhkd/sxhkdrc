@@ -1,0 +1,90 @@
+# Reload sxhkd
+super + Escape
+  pkill -USR1 -x sxhkd & dwmbar & pkill dunst && dunst 2>/dev/null
+
+# Terminal
+super + Return
+  st
+super + grave
+  st
+
+# App launcher
+super + d
+  dmenu_run_history -m "0" -l 5
+
+# Search
+super + s
+  menu-surfraw
+
+# File manager
+super + e
+  st -e lf
+
+super + shift + e
+  st -e lf /tmp/downloads/
+
+super + KP_Enter
+  tabbed -c -r 2 st -w ''
+
+# Lock display
+super + l
+  slock
+
+# Screenshot
+XF86Display
+  maim --shader=crosshair -s | xclip -selection clipboard -t image/png
+
+# Password manager in dmenu
+super + p
+  lastmenu
+
+# Launch frequently used apps
+XF86HomePage
+  chromium
+
+shift + XF86HomePage
+  chromium --incognito
+
+alt + XF86HomePage
+  tabbed -r2 surf -pe x duckduckgo.com
+
+XF86Calculator
+  code
+
+shift + XF86Calculator
+  st -e musikcube
+
+alt + XF86Calculator
+  < ~/media/talks/talks/type | dmenu -p "type:" -l 6 | xargs xdotool type --clearmodifiers
+
+# Media keys
+hyper + space
+  playerctl play-pause
+
+# Volume
+XF86AudioLowerVolume
+  pactl set-sink-volume 0 -5% && dwmbar
+XF86AudioRaiseVolume
+  pactl set-sink-volume 0 +5% && dwmbar
+
+# Brightness
+XF86MonBrightnessDown
+  xbacklight -dec 9
+XF86MonBrightnessUp
+  xbacklight -inc 10
+
+# Shutdown
+super + shift + x
+  echo 'shutdown now\nreboot' | dmenu -p "do you want to:" -l 2 -nf '#f2e5bc' -sb '#cc241d' -nb '#fb4934' -sf '#f2e5bc' | zsh
+
+# Type Out Stuff
+XF86Explorer
+  < ~/.config/sxhkd/type | dmenu -p "type:" -l 3 | xargs xdotool type --clearmodifiers
+
+#shift + button4
+#  xdotool key ctrl+Tab
+#shift + button5
+#  xdotool key ctrl+shift+Tab
+
+XF86Tools
+  echo level 0 | sudo tee /proc/acpi/ibm/fan
