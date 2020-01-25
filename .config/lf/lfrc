@@ -6,29 +6,101 @@ set dircounts on
 set color256 on
 set wrapscroll on
 set incsearch on
+set previewer /usr/bin/pistol
 
-map g.c cd ~/.config
-map g.a cd ~/.android
-map g.l cd ~/.local
-map gM cd ~/media
+# Unmap
+map c
+map ,
+map \'
+
+## map directories
+map b cd ~/build
+
+# hidden
+map .c cd ~/.config
+map .a cd ~/.android
+map .l cd ~/.local/bin
+
+# media
+map gG cd ~/media
 map ga cd ~/media/articles
+map gk cd ~/media/audiobooks
 map gb cd ~/media/books
 map gc cd ~/media/courses
 map gf cd ~/media/film
+map gd cd ~/media/documents
 map gl cd ~/media/lectures
 map gm cd ~/media/music
-map gp cd ~/media/pix
+map gp cd ~/media/papers
+map gx cd ~/media/pix
+map go cd ~/media/podcasts
 map gw cd ~/media/pix/wallpapers
 map gt cd ~/media/talks
-map grm cd /run/media/me
-map grt cd /tmp
+map gv cd ~/media/videos
 
-map D :delete
+# root
+map ,t cd /tmp
+map ,d cd /tmp/downloads
+map ,m cd /run/media/me
+
+map <enter> open
+map <tab> mark-load
+
+# map actions
+map x :delete
+map A :ext-rename
+map <esc> :clear
+map R ${{
+    old=$(mktemp)
+    new=$(mktemp)
+    [ -n $fs ] && fs=$(ls)
+    printf "$fs\n" > $old
+    printf "$fs\n" > $new
+    $EDITOR $new
+    [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
+    paste $old $new | while read names; do
+        src=$(printf $names | cut -f1)
+        dst=$(printf $names | cut -f2)
+        [ $src = $dst ] && continue
+        [ -e $dst ] && continue
+        mv $src $dst
+    done
+    rm $old $new
+    lf -remote "send $id unselect"
+}}
+
+# open
+map om &setsid mpv .
+map oM &setsid mpv --keepaspect-window .
+map os &setsid sxiv .
+map oa &setsid chromiumapp $fx
+
+# map actions in command line
 cmap <up> cmd-history-prev
 cmap <down> cmd-history-next
+cmap <c-h> cmd-word-back
+cmap <c-l> cmd-word
 
+# functions
 cmd open &setsid xdg-open $fx
-cmd wall $feh --bg-fill $fx
-cmd vdir $vidir
-cmd mpv &setsid mpv $fx
-cmd configadd $/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME add $fx
+cmd configadd $/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $fx
+
+cmd ext-rename &{{
+	if [ "$(echo "$fx" | wc -l)" -gt 1 ]; then
+		lf -remote "send $id echo You can't change more than one file name"
+		lf -remote "send $id unselect"
+	else
+		if [ -d "$f" ]; then
+			lf -remote "send $id rename"
+		else
+			ext_len="$(echo ${f##*.} | wc -m)"
+			for i in $(seq "$ext_len"); do
+				pos="${pos}<left>"
+			done
+			lf -remote "send $id rename"
+			lf -remote "send $id push "$pos""
+		fi
+	fi
+}}
+
+cmd kebab $node ~/build/rename-2-kebabcase/index.js -r .
