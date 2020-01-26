@@ -36,6 +36,7 @@ map gx cd ~/media/pix
 map go cd ~/media/podcasts
 map gw cd ~/media/pix/wallpapers
 map gt cd ~/media/talks
+map gT cd ~/media/tv
 map gv cd ~/media/videos
 
 # root
