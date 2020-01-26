@@ -75,6 +75,7 @@ map om &setsid mpv .
 map oM &setsid mpv --keepaspect-window .
 map os &setsid sxiv .
 map oa &setsid chromiumapp $fx
+map ot &setsid mpv --referrer="https://twist.moe/" --playlist=episodes --prefetch-playlist
 
 # map actions in command line
 cmap <up> cmd-history-prev
