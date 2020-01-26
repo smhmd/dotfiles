@@ -17,7 +17,7 @@ xrdb ~/.Xresources
 xset r rate 300 50
 
 # Map the caps lock key to super
-setxkbmap -option caps:hyper
+#setxkbmap -option caps:hyper
 
 # But when it is pressed only once, treat it as escape
 killall xcape 2>/dev/null ; xcape -e 'Hyper_L=Escape'
