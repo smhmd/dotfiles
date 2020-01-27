@@ -21,7 +21,7 @@ alias mimerc="$EDITOR $HOME/.config/mimi/mime.conf"
 alias sxhkdrc="$EDITOR $HOME/.config/sxhkd/sxhkdrc"
 alias zathurarc="$EDITOR $HOME/.config/zathura/zathurarc"
 alias pistolrc="$EDITOR $HOME/.config/pistol/pistol.conf"
-alias dunst="$EDITOR $HOME/.config/dunst/dunstrc"
+alias dunstrc="$EDITOR $HOME/.config/dunst/dunstrc"
 alias lsrc="$EDITOR $HOME/.config/LS_COLORS"
 alias zplugins="$EDITOR $HOME/.config/zsh/.zshplugins"
 
