@@ -85,7 +85,7 @@ cmap <c-l> cmd-word
 
 # functions
 cmd open &setsid xdg-open $fx
-cmd configadd $/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $fx
+cmd dotfiles $/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $fx
 
 cmd ext-rename &{{
 	if [ "$(echo "$fx" | wc -l)" -gt 1 ]; then
