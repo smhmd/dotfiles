@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+hub clone -n mpv-player/mpv --depth 1 && cd mpv && git checkout HEAD ./TOOLS/lua/autoload.lua && ln -s ~/.config/mpv/scripts_repos/mpv/TOOLS/lua/autoload.lua $HOME/.config/mpv/scripts/autoload.lua
+
+yay -Sy --needed --noconfirm mpv-mpris && ln -s /usr/lib/mpv/mpris.so $HOME/.config/mpv/scripts/mpris.so
+
+hub clone --depth 1 noctuid/mpv-peerflix-hook && ln -s ~/.config/mpv-peerflix-hook/peerflix-hook.lua $HOME/.config/mpv/scripts/peerflix.lua
+
+hub clone --depth 1 davidde/mpv-autosub && ln -s ~/.config/mpv/scripts_repos/mpv-autosub/autosub.lua $HOME/.config/mpv/scripts/autosub.lua
+
+hub clone --depth 1 aidanholm/mpv-easycrop && ln -s ~/.config/mpv/scripts_repos/mpv-easycrop/easycrop.lua $HOME/.config/mpv/scripts/easycrop.lua
+
+hub clone --depth 1 donmaiq/mpv-filenavigator && ln -s ~/.config/mpv/scripts_repos/mpv-filenavigator/navigator.lua $HOME/.config/mpv/scripts/navigator.lua
