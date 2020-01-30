@@ -7,9 +7,9 @@ set recolor-keephue "true"
 #set recolor "true"
 #set recolor-reverse-video "true"
 
-#set scroll-page-aware "true"
-#set scroll-full-overlap 0.01
-#set scroll-step 20
+set scroll-page-aware "true"
+#set scroll-full-overlap 2
+set scroll-step 50
 
 set statusbar-fg "#f2e5bc"
 set statusbar-bg "#282828"
