@@ -10,7 +10,7 @@ super + grave
 
 # App launcher
 super + d
-  dmenu_run_history -m "0" -l 5
+  dmenu_run -m "0" -l 5
 
 # Search
 super + s
