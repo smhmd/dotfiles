@@ -42,7 +42,6 @@ export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH" # NPM without sudo
 export PATH="$HOME/.basher/bin:$PATH" # Basher
-export PATH="$HOME/.gem/ruby/3.6.0/bin:$PATH" # Ruby
 export PATH="$HOME/.cargo/bin:$PATH" # Cargo
 export PATH="$HOME/.go/bin:$PATH" # Go
 
