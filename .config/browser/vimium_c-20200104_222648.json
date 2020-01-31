@@ -1,0 +1,13 @@
+{
+	"name": "Vimium C",
+	"@time": "1/4/2020, 10:26:48 PM",
+	"time": 1578173208716,
+	"environment": {
+		"extension": "1.79.1",
+		"platform": "linux",
+		"chrome": 79
+	},
+	"previousPatterns": "easdghjklcvnb",
+	"searchUrl": "https://duckduckgo.com/?q=$s DuckDuckGo",
+	"showAdvancedOptions": true
+}
