@@ -46,7 +46,7 @@ shift + XF86HomePage
   chromium --incognito
 
 alt + XF86HomePage
-  tabbed -r2 surf -pe x duckduckgo.com
+  google-chrome-unstable
 
 XF86Calculator
   code
