@@ -5,6 +5,10 @@ alias setsid="setsid "
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
+alias cp="cp -i"                                                # Confirm before overwriting something
+alias df='df -h'                                                # Human-readable sizes
+alias free='free -m'                                            # Show sizes in MB
+
 # Files
 alias zshrc="$EDITOR $HOME/.config/zsh/.zshrc"
 alias profile="$EDITOR $HOME/.profile"
