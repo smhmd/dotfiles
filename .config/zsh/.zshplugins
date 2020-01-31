@@ -1,0 +1,4 @@
+zplugin light MichaelAquilina/zsh-you-should-use
+zplugin light zdharma/fast-syntax-highlighting
+zplugin light MichaelAquilina/zsh-auto-notify
+zplugin light skywind3000/z.lua
