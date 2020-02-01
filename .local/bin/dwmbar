@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+# Sets DWM bar
+
+BAR_VOLUME="♫ $(pamixer --get-volume)"
+BAR_IS_DISCHARGIN="$(acpi -b | grep 'Discharging' >/dev/null || echo '⚡')"
+BAR_BATTERY="$(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null)"
+BAR_DATE="$(date +"%F] [%R")"
+
+xsetroot -name "[$BAR_VOLUME] [$BAR_IS_DISCHARGIN$BAR_BATTERY] [$BAR_DATE]"
+
+# [[ ! $BAR_BATTERY > "10" ]] && notify-send -u critical "battery:" "$BAR_BATTERY"
+# [[ ! $BAR_BATTERY > "4" ]] &&
+

@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+mediainfo $1 | grep 'Lyrics' | sed 's/:/\n/' | sed 's/\//\n/g' | less

@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# A script to easily edit scripts in the path
+
+$EDITOR `which $1`
