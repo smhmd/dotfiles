@@ -69,6 +69,7 @@ map R ${{
     rm $old $new
     lf -remote "send $id unselect"
 }}
+map E &setsid st -e nvim $fx
 
 # open
 map om &setsid mpv .
