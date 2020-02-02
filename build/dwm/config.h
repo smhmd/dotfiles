@@ -43,6 +43,7 @@ static const Rule rules[] = {
 	{ "Google-chrome-unstable",  NULL,       NULL,       1 << 1,       0,             0,           -1 },
 	{ "mpv",                     NULL,       NULL,       1 << 2,       0,             0,           -1 },
 	{ "Zathura",                 NULL,       NULL,       1 << 3,       0,             0,           -1 },
+	{ "code-oss",                NULL,       NULL,       1 << 0,       0,             0,           -1 },
 };
 
 /* layout(s) */
