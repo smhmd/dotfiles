@@ -175,21 +175,7 @@ hash -d talks=$HOME/media/talks
 hash -d tv=$HOME/media/tv
 hash -d videos=$HOME/media/videos
 
-# use lf to cd
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                "$dir"
-            fi
-        fi
-    fi
-}
-bindkey -s '^o' 'lfcd\n'  # zsh
+bindkey -s '^o' 'exit\n'  # out
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
