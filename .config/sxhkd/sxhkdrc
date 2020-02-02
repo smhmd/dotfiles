@@ -23,9 +23,6 @@ super + e
 super + shift + e
   st -e lf /tmp/downloads/
 
-super + KP_Enter
-  tabbed -c -r 2 st -w ''
-
 # Lock display
 super + l
   slock
@@ -54,12 +51,13 @@ XF86Calculator
 shift + XF86Calculator
   st -e musikcube
 
-alt + XF86Calculator
-  < ~/media/talks/talks/type | dmenu -p "type:" -l 6 | xargs xdotool type --clearmodifiers
-
 # Media keys
-hyper + space
+super + space
   playerctl play-pause
+super + {Left, Right, Down, Up}
+  playerctl position {5-, 5+, 60-, 60+}
+super + {minus, plus}
+  playerctl volume {0.1-, 0.1+}
 
 # Volume
 XF86AudioLowerVolume
@@ -79,7 +77,7 @@ super + shift + x
 
 # Type Out Stuff
 XF86Explorer
-  < ~/.config/sxhkd/type | dmenu -p "type:" -l 3 | xargs xdotool type --clearmodifiers
+  < ~/.config/sxhkd/regular-text | dmenu -p "type:" -l 3 | xargs xdotool type --clearmodifiers
 
 #shift + button4
 #  xdotool key ctrl+Tab
