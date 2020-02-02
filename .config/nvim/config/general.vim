@@ -22,5 +22,6 @@ set updatetime=100
 set termguicolors
 set mouse=a
 set tabstop=5 softtabstop=0 expandtab shiftwidth=2
+set cursorline
 colorscheme gruvbox
 
