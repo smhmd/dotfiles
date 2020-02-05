@@ -70,7 +70,7 @@ alias aury="yay -Sy"
 alias auryu="yay -Syu --devel"
 alias auryun="yay -Syu --devel --noconfirm"
 alias aurr="yay -R"
-alias aurrns="yay -Rns"
+alias aurrns="yay -Rns --noconfirm"
 
 alias batt="acpi -b"
 alias aria="aria2c -x8 --allow-overwrite"
