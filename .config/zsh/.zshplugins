@@ -1,4 +1,7 @@
 zplugin light MichaelAquilina/zsh-you-should-use
 zplugin light zdharma/fast-syntax-highlighting
-zplugin light MichaelAquilina/zsh-auto-notify
+zplugin light marzocchi/zsh-notify
 zplugin light skywind3000/z.lua
+
+zstyle ':notify:*' notifier ~/.local/bin/zsh-notify
+zstyle ':notify:*' command-complete-timeout 10

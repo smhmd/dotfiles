@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+stdin=$(</dev/stdin)
+
+if [ "$1" == 'success' ]; then
+   notify-send "$stdin" "$2s"
+elif [ "$1" == 'error' ]; then
+   notify-send "$stdin" "$2s"  --urgency="critical"
+fi
+
