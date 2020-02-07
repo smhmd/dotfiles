@@ -28,6 +28,7 @@ alias pistolrc="$EDITOR $HOME/.config/pistol/pistol.conf"
 alias dunstrc="$EDITOR $HOME/.config/dunst/dunstrc"
 alias lsrc="$EDITOR $HOME/.config/LS_COLORS"
 alias zplugins="$EDITOR $HOME/.config/zsh/.zshplugins"
+alias jarorc="$EDITOR $HOME/.config/associations"
 
 alias ngen="$EDITOR $HOME/.config/nvim/config/general.vim"
 alias nkey="$EDITOR $HOME/.config/nvim/config/keys.vim"

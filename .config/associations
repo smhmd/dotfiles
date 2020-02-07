@@ -1,0 +1,36 @@
+(assoc
+  #:pattern "inode/directory"
+  #:program "lf %f"
+  #:term "st -e"
+)
+
+(assoc
+  #:pattern "video/.*"
+  #:program "mpv %f"
+)
+
+(assoc
+  #:pattern "audio/.*"
+  #:program "mpv %f"
+)
+
+(assoc
+  #:pattern "image/.*"
+  #:program "sxiv %f"
+)
+
+(assoc
+  #:pattern "^text/.*"
+  #:program "nvim %f"
+  #:term "st -e"
+)
+
+(assoc
+  #:pattern "application/pdf"
+  #:program "zathura %f"
+)
+
+(assoc
+  #:pattern '("^https?://(www.)?youtu.?be(.com)?/*" "^https?://twitter.com/i/status/*")
+  #:program "mpv --loop %f"
+)
