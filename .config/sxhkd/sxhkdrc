@@ -5,6 +5,7 @@ super + Escape
 # Terminal
 super + Return
   st
+
 super + grave
   st
 
@@ -29,7 +30,7 @@ super + l
 
 # Screenshot
 XF86Display
-  maim --shader=crosshair -s | xclip -selection clipboard -t image/png
+  maim --hidecursor --shader=crosshair -s | xclip -selection clipboard -t image/png
 
 # Password manager in dmenu
 super + p
@@ -51,23 +52,30 @@ XF86Calculator
 shift + XF86Calculator
   st -e musikcube
 
+super + XF86HomePage
+  xdg-open $(xclip -o)
+
 # Media keys
 super + space
   playerctl play-pause
+
 super + {Left, Right, Down, Up}
   playerctl position {5-, 5+, 60-, 60+}
+
 super + {minus, plus}
   playerctl volume {0.1-, 0.1+}
 
 # Volume
 XF86AudioLowerVolume
   pactl set-sink-volume 0 -5% && dwmbar
+
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5% && dwmbar
 
 # Brightness
 XF86MonBrightnessDown
   xbacklight -dec 9
+
 XF86MonBrightnessUp
   xbacklight -inc 10
 
