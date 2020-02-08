@@ -2,6 +2,15 @@ zplugin light MichaelAquilina/zsh-you-should-use
 zplugin light zdharma/fast-syntax-highlighting
 zplugin light marzocchi/zsh-notify
 zplugin light skywind3000/z.lua
+zplugin light jackharrisonsherlock/common
 
 zstyle ':notify:*' notifier ~/.local/bin/zsh-notify
 zstyle ':notify:*' command-complete-timeout 10
+
+COMMON_PROMPT_SYMBOL="$"
+#COMMON_PROMPT_SYMBOL="░"
+
+common_current_dir() {
+  #echo -n "%{$fg[$COMMON_COLORS_CURRENT_DIR]%}%c%b "
+  echo -n "%F{$COMMON_COLORS_CURRENT_DIR}%B%~%b%f "
+}
