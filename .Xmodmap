@@ -1,10 +1,23 @@
 ! Unmap capslock
 clear Lock
 keysym Caps_Lock = Escape
-keycode 107 = Hyper_L
 
-! Leave mod4 as windows key _only_
-remove mod4 = Hyper_L
+keycode 10 = exclam       1
+keycode 11 = at           2
+keycode 12 = numbersign   3
+keycode 13 = dollar       4
+keycode 14 = percent      5
+keycode 15 = asciicircum  6
+keycode 16 = ampersand    7
+keycode 17 = asterisk     8
+keycode 18 = parenleft    9
+keycode 19 = parenright   0
 
-! Set mod3 to capslock
-add mod3 = Hyper_L
+keycode 47 = apostrophe quotedbl
+keycode 48 = parenleft bar
+keycode 51 = parenright backslash
+
+keycode 59 = comma semicolon
+keycode 60 = period colon
+
+keycode 107 = Menu
