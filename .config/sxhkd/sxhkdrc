@@ -15,7 +15,10 @@ super + d
 
 # Search
 super + s
-  menu-surfraw
+  bang-menu
+
+super + shift + s
+  bang-cb
 
 # File manager
 super + e

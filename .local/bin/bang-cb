@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+search=$(echo '' | dmenu -p 'copy:') &&
+
+if xclip -o; then
+  search=${search/@@/$(xclip -o)}
+fi &&
+
+url=$(bang -url $search) &&
+
+echo $url | xclip -selection primary &&
+
+notify-send 'URL Copied.' "$url"
