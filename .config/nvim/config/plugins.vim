@@ -16,8 +16,9 @@ Plug 'posva/vim-vue'
 Plug 'digitaltoad/vim-pug'
 Plug 'rhysd/clever-f.vim'
 Plug 'lervag/vimtex'
+Plug 'othree/html5.vim'
+Plug 'skywind3000/asyncrun.vim'
 "Plug 'junegunn/fzf.vim'
-"Plug 'skywind3000/asyncrun.vim'
 "Plug 'tmsvg/pear-tree'
 "Plug 'tpope/vim-surround'
 "Plug 'tpope/vim-dispatch'
@@ -43,6 +44,11 @@ let g:livepreview_previewer = 'zathura' " Set previewer to zathura for latex
 "let g:gruvbox_italic = 1 " Add italics to gruvbox
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-pairs']
+
+let g:airline_theme='gruvbox'
+
+"let g:lightline = { 'colorscheme': 'badwolf' }
+
 
 " vim-vue
 let g:vue_pre_processors = ['pug', 'postcss']
