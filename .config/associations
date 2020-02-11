@@ -1,22 +1,33 @@
 (assoc
-  #:pattern "inode/directory"
+  #:pattern "^inode/directory"
   #:program "lf %f"
   #:term "st -e"
 )
 
 (assoc
-  #:pattern "video/.*"
+  #:pattern "^application/x-executable"
+  #:program "exec %f"
+  #:term: "st -e"
+)
+
+(assoc
+  #:pattern "^video/.*"
   #:program "mpv %f"
 )
 
 (assoc
-  #:pattern "audio/.*"
+  #:pattern "^audio/.*"
   #:program "mpv %f"
 )
 
 (assoc
-  #:pattern "image/.*"
+  #:pattern "^image/.*"
   #:program "sxiv %f"
+)
+
+(assoc
+  #:pattern "^text/html"
+  #:program "chromium %f"
 )
 
 (assoc
@@ -31,6 +42,17 @@
 )
 
 (assoc
+  #:pattern '("application/zip" "application/x-rar")
+  #:program "unar %f"
+)
+
+(assoc
   #:pattern '("^https?://(www.)?youtu.?be(.com)?/*" "^https?://twitter.com/i/status/*")
   #:program "mpv --loop %f"
 )
+
+(assoc
+  #:pattern "^https?://.*"
+  #:program "chromium %f"
+)
+
