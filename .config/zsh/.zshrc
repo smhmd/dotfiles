@@ -186,4 +186,4 @@ autoload -Uz _zplugin
 [ -f "$HOME/.config/zsh/.zshplugins" ] && source "$HOME/.config/zsh/.zshplugins"
 ### End of Zplugin installer's chunk
 
-AUTO_NOTIFY_IGNORE+=( $( < $HOME/.config/notify-ignore ) )
+source /home/me/.config/broot/launcher/bash/br
