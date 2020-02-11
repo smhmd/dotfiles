@@ -108,3 +108,4 @@ cmd ext-rename &{{
 }}
 
 cmd kebab $node ~/build/rename-2-kebabcase/index.js -r .
+cmd nautilus &nautilus .
