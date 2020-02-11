@@ -31,7 +31,7 @@
 )
 
 (assoc
-  #:pattern "^text/.*"
+  #:pattern '("^text/.*" "application/json")
   #:program "nvim %f"
   #:term "st -e"
 )
@@ -44,6 +44,11 @@
 (assoc
   #:pattern '("application/zip" "application/x-rar")
   #:program "unar %f"
+)
+
+(assoc
+  #:pattern '("application/vnd.openxmlformats-officedocument.presentationml.presentation" "application/msword" "application/vnd.ms-powerpoint" "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+  #:program "zaread %f"
 )
 
 (assoc
