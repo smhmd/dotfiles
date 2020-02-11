@@ -58,3 +58,6 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-r
 
 eval "$(dircolors $HOME/.config/LS_COLORS)"
+
+mkdir -p /tmp/downloads
+ln -s $HOME/media/articles /tmp/downloads/articles
