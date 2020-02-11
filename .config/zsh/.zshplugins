@@ -9,6 +9,7 @@ zstyle ':notify:*' command-complete-timeout 10
 
 COMMON_PROMPT_SYMBOL="$"
 #COMMON_PROMPT_SYMBOL="░"
+COMMON_COLORS_RETURN_STATUS_FALSE=9
 
 common_current_dir() {
   #echo -n "%{$fg[$COMMON_COLORS_CURRENT_DIR]%}%c%b "
