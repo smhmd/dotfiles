@@ -3,7 +3,7 @@
 alias sudo="sudo "
 alias setsid="setsid "
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias .df='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 alias cp="cp -i"                                                # Confirm before overwriting something
 alias df='df -h'                                                # Human-readable sizes
