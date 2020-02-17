@@ -1,11 +1,17 @@
 (assoc
-  #:pattern "^inode/directory"
+  #:pattern "^inode/directory$"
   #:program "lf %f"
   #:term "st -e"
 )
 
 (assoc
-  #:pattern "^application/x-executable"
+  #:pattern '("^text/*" "^application/json$" "^application/x-subrip$")
+  #:program "nvim %f"
+  #:term "st -e"
+)
+
+(assoc
+  #:pattern "^application/x-executable$"
   #:program "exec %f"
   #:term: "st -e"
 )
@@ -21,43 +27,41 @@
 )
 
 (assoc
+  #:pattern "^image/gif$"
+  #:program "sxiv -a %f"
+)
+
+(assoc
   #:pattern "^image/.*"
   #:program "sxiv %f"
 )
 
 (assoc
-  #:pattern "^text/html"
+  #:pattern "^text/html$"
   #:program "chromium %f"
 )
 
 (assoc
-  #:pattern '("^text/.*" "application/json")
-  #:program "nvim %f"
-  #:term "st -e"
-)
-
-(assoc
-  #:pattern "application/pdf"
+  #:pattern "^application/pdf$"
   #:program "zathura %f"
 )
 
 (assoc
-  #:pattern '("application/zip" "application/x-rar")
+  #:pattern '("^application/zip$" "^application/x-rar$")
   #:program "unar %f"
 )
 
 (assoc
-  #:pattern '("application/vnd.openxmlformats-officedocument.presentationml.presentation" "application/msword" "application/vnd.ms-powerpoint" "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+  #:pattern '("$application/vnd.openxmlformats-officedocument.presentationml.presentation$" "^application/msword$" "^application/vnd.ms-powerpoint$" "^application/vnd.openxmlformats-officedocument.wordprocessingml.document$")
   #:program "zaread %f"
 )
 
 (assoc
   #:pattern '("^https?://(www.)?youtu.?be(.com)?/*" "^https?://twitter.com/i/status/*")
-  #:program "mpv --loop %f"
+  #:program "notify-send 'playing...' %f && mpv --loop %f"
 )
 
 (assoc
   #:pattern "^https?://.*"
   #:program "chromium %f"
 )
-
