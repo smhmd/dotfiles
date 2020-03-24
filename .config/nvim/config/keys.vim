@@ -1,3 +1,8 @@
+"" Overrides
+" movement
+nnoremap j gj
+nnoremap k gk
+
 " vimling
 nm   <leader><leader>d :call ToggleDeadKeys()<CR>
 imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
