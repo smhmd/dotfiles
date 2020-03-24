@@ -3,6 +3,10 @@
 alias sudo="sudo "
 alias setsid="setsid "
 
+alias open="xdg-open"
+alias e="$EDITOR"
+alias o="<"
+
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias dottig='GIT_DIR=$HOME/.dotfiles GIT_WORK_TREE=$HOME tig'
 
@@ -10,37 +14,6 @@ alias cp="cp -i"                                                # Confirm before
 alias df='df -h'                                                # Human-readable sizes
 alias free='free -m'                                            # Show sizes in MB
 
-# Files
-alias zshrc="$EDITOR $HOME/.config/zsh/.zshrc"
-alias profile="$EDITOR $HOME/.profile"
-alias aliasrc="$EDITOR $HOME/.config/aliasrc"
-alias securealiasrc="$EDITOR $HOME/.config/securealiasrc"
-alias dwmrc="$EDITOR $HOME/build/dwm/config.h"
-alias strc="$EDITOR $HOME/build/st-flexipatch/config.h"
-alias lfrc="$EDITOR $HOME/.config/lf/lfrc"
-alias xinitrc="$EDITOR $HOME/.xinitrc"
-alias ncmrc="$EDITOR $HOME/.config/ncmpcpp/config"
-alias mpvrc="$EDITOR $HOME/.config/mpv/mpv.conf"
-alias mpvinp="$EDITOR $HOME/.config/mpv/input.conf"
-alias mimerc="$EDITOR $HOME/.config/mimi/mime.conf"
-alias sxhkdrc="$EDITOR $HOME/.config/sxhkd/sxhkdrc"
-alias zathurarc="$EDITOR $HOME/.config/zathura/zathurarc"
-alias pistolrc="$EDITOR $HOME/.config/pistol/pistol.conf"
-alias dunstrc="$EDITOR $HOME/.config/dunst/dunstrc"
-alias lsrc="$EDITOR $HOME/.config/LS_COLORS"
-alias zplugins="$EDITOR $HOME/.config/zsh/.zshplugins"
-alias jarorc="$EDITOR $HOME/.config/associations"
-alias bangs="$EDITOR $HOME/.config/bangs.yaml"
-
-alias ngen="$EDITOR $HOME/.config/nvim/config/general.vim"
-alias nkey="$EDITOR $HOME/.config/nvim/config/keys.vim"
-alias nplg="$EDITOR $HOME/.config/nvim/config/plugins.vim"
-alias nfun="$EDITOR $HOME/.config/nvim/config/functions.vim"
-
-alias open="xdg-open"
-
-alias n="$EDITOR"
-alias o="<"
 
 alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
 alias -s {jpg,jpeg,png,mng,tiff,tif,xpm}=$XIVIEWER
@@ -49,11 +22,7 @@ alias -s {cpp,cxx,cc,c,hh,h,inl,asc,md,txt,TXT,tex,conf,config}=nvim
 alias -s pdf="zathura"
 alias -s gif="$XIVIEWER -a"
 
-alias fuck='sudo $(fc -ln -1)'
 alias refresh="source $HOME/.config/zsh/.zshrc && source $HOME/.profile"
-
-alias dwmmake="cd ~/build/dwm/ ;sudo make clean install; cd -"
-alias stmake="cd ~/build/st-flexipatch/; sudo make clean install; cd -"
 
 alias ls='exa -1 --group-directories-first'
 alias ll='exa -l --git --group-directories-first'
@@ -75,22 +44,9 @@ alias auryun="yay -Syu --devel --noconfirm"
 alias aurr="yay -R"
 alias aurrns="yay -Rns --noconfirm"
 
-alias batt="acpi -b"
 alias aria="aria2c -x8 --allow-overwrite"
 alias connected="ping -c 2 google.com"
 alias fan-status="bat -p /proc/acpi/ibm/fan"
-alias c="code"
+alias c.="code . && exit"
 alias peerflix="peerflix -kd"
-alias ncm="ncmpcpp"
-alias ffrec="ffmpeg -y -f x11grab -s 1366x768 -i :0.0 out.mkv"
-alias screenshottoclipboard="import png:- | xclip -selection clipboard -t image/png"
 alias rename-2-kebabcase="node ~/build/rename-2-kebabcase/index.js"
-alias ascii="< ~/build/ascii | dmenu -l 30 | awk \'{print $2}\'"
-
-
-alias yamete="docker run --rm -ti -v ~/media/books/.x:/app/downloads -u 1000:1000 jaymoulin/yamete download -p -u"
-alias yamete-list="docker run --rm -ti -v ~/media/books/.x:/app/downloads -v ~/.buffers/yamete:/app/list -u 1000:1000 jaymoulin/yamete download -p -l /app/list"
-alias yamete-load='echo $(xclip -selection primary -o) >> ~/.buffers/yamete'
-
-alias 4chan="~/build/4chan-downloader/inb4404.py -cdln"
-alias glow="glow -s dark"
