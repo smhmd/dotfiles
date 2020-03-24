@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+program=$(printf "mpv\\nmpv (loop)\\nbrowser\\nbrowser (guest)\\nbrowser (app)\\nfirefox\\nnvim" | dmenu -l 6 -p "Open link")
+
+case "$program" in
+	mpv) setsid mpv -quiet "$1" >/dev/null 2>&1 & ;;
+	"mpv (loop)") setsid mpv -quiet --loop "$1" >/dev/null 2>&1 & ;;
+	browser) setsid chromium "$1" >/dev/null 2>&1 & ;;
+     "browser (guest)") setsid google-chrome-unstable "$1" >/dev/null 2>&1 & ;;
+     "browser (app)") setsid chromium --app="$1" >/dev/null 2>&1 & ;;
+	"google-chrome app") setsid google-chrome-unstable --app="$1" >/dev/null 2>&1 & ;;
+     firefox) setsid firefox "$1" >/dev/null 2>&1 & ;;
+	nvim) setsid st -e nvim "$1" >/dev/null 2>&1 & ;;
+esac
+
+notify-send "Opening..." "$program $1"

@@ -5,6 +5,11 @@
 )
 
 (assoc
+  #:pattern "^text/html$"
+  #:program "$BROWSER %f"
+)
+
+(assoc
   #:pattern '("^text/*" "^application/json$" "^application/x-subrip$")
   #:program "nvim %f"
   #:term "st -e"
@@ -37,12 +42,7 @@
 )
 
 (assoc
-  #:pattern "^text/html$"
-  #:program "chromium %f"
-)
-
-(assoc
-  #:pattern "^application/pdf$"
+  #:pattern '("^application/pdf$" "^application/epub+zip$")
   #:program "zathura %f"
 )
 
@@ -57,11 +57,6 @@
 )
 
 (assoc
-  #:pattern '("^https?://(www.)?youtu.?be(.com)?/*" "^https?://twitter.com/i/status/*")
-  #:program "notify-send 'playing...' %f && mpv --loop %f"
-)
-
-(assoc
   #:pattern "^https?://.*"
-  #:program "chromium %f"
+  #:program "url-handler %f"
 )
