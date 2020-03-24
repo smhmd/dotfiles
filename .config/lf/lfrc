@@ -44,32 +44,31 @@ map ,t cd /tmp
 map ,d cd /tmp/downloads
 map ,m cd /run/media/me
 
+# map actions
 map <enter> open
 map <tab> mark-load
 
 # map actions
 map x :delete
-map A :ext-rename
-map <esc> :clear
-map R ${{
-    old=$(mktemp)
-    new=$(mktemp)
-    [ -n $fs ] && fs=$(ls)
-    printf "$fs\n" > $old
-    printf "$fs\n" > $new
-    $EDITOR $new
-    [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
-    paste $old $new | while read names; do
-        src=$(printf $names | cut -f1)
-        dst=$(printf $names | cut -f2)
-        [ $src = $dst ] && continue
-        [ -e $dst ] && continue
-        mv $src $dst
-    done
-    rm $old $new
-    lf -remote "send $id unselect"
-}}
 map E &setsid st -e nvim $fx
+map R ${{
+  old=$(mktemp)
+  new=$(mktemp)
+  [ -n $fs ] && fs=$(ls)
+  printf "$fs\n" > $old
+  printf "$fs\n" > $new
+  $EDITOR $new
+  [ $(cat $new | wc -l) -ne $(cat $old | wc -l) ] && exit
+  paste $old $new | while read names; do
+    src=$(printf $names | cut -f1)
+    dst=$(printf $names | cut -f2)
+    [ $src = $dst ] && continue
+    [ -e $dst ] && continue
+    mv $src $dst
+  done
+  rm $old $new
+  lf -remote "send $id unselect"
+}}
 
 # open
 map om &setsid mpv .
@@ -85,27 +84,9 @@ cmap <c-h> cmd-word-back
 cmap <c-l> cmd-word
 
 # functions
-cmd open &setsid xdg-open $fx
+cmd open &setsid xdg-open $fx # && lf -remote "send $id :reload"
 cmd dotfiles $/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $fx
 cmd +x &chmod +x $fx
 cmd 644 &chmod 644 $fx
-cmd ext-rename &{{
-	if [ "$(echo "$fx" | wc -l)" -gt 1 ]; then
-		lf -remote "send $id echo You can't change more than one file name"
-		lf -remote "send $id unselect"
-	else
-		if [ -d "$f" ]; then
-			lf -remote "send $id rename"
-		else
-			ext_len="$(echo ${f##*.} | wc -m)"
-			for i in $(seq "$ext_len"); do
-				pos="${pos}<left>"
-			done
-			lf -remote "send $id rename"
-			lf -remote "send $id push "$pos""
-		fi
-	fi
-}}
-
-cmd kebab $node ~/build/rename-2-kebabcase/index.js -r .
+cmd kebab !node ~/build/rename-2-kebabcase/index.js -r .
 cmd nautilus &nautilus .
