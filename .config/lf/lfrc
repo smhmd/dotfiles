@@ -6,7 +6,7 @@ set dircounts on
 set color256 on
 set wrapscroll on
 set incsearch on
-set previewer /usr/bin/pistol
+set previewer /home/me/.go/bin/pistol
 
 # Unmap
 map c
