@@ -1,37 +1,30 @@
-# Reload sxhkd
 super + Escape
   pkill -USR1 -x sxhkd & dwmbar & pkill dunst && dunst 2>/dev/null
 
-# Terminal
 super + Return
   st
 
 super + grave
   st
 
-# App launcher
 super + d
   dmenu_run -m "0" -l 5
 
-# Search
 super + s
   bang-menu
 
 super + shift + s
   bang-cb
 
-# File manager
 super + e
   st -e lf
 
 super + shift + e
   st -e lf /tmp/downloads/
 
-# Lock display
 super + l
   slock
 
-# Screenshot
 XF86Display
   maim --hidecursor --shader=crosshair -s | xclip -selection clipboard -t image/png
 
@@ -39,7 +32,6 @@ XF86Display
 super + p
   lastmenu
 
-# Launch frequently used apps
 XF86HomePage
   chromium
 
@@ -55,10 +47,12 @@ XF86Calculator
 shift + XF86Calculator
   st -e musikcube
 
+super + XF86Calculator
+  st -e eva
+
 super + XF86HomePage
   xdg-open $(xclip -o)
 
-# Media keys
 super + space
   playerctl play-pause
 
@@ -68,32 +62,26 @@ super + {Left, Right, Down, Up}
 super + {minus, plus}
   playerctl volume {0.1-, 0.1+}
 
-# Volume
 XF86AudioLowerVolume
   pactl set-sink-volume 0 -5% && dwmbar
 
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5% && dwmbar
 
-# Brightness
 XF86MonBrightnessDown
   xbacklight -dec 9
 
 XF86MonBrightnessUp
   xbacklight -inc 10
 
-# Shutdown
 super + shift + x
   echo 'shutdown now\nreboot' | dmenu -p "do you want to:" -l 2 -nf '#f2e5bc' -sb '#cc241d' -nb '#fb4934' -sf '#f2e5bc' | zsh
 
-# Type Out Stuff
 XF86Explorer
   < ~/.config/sxhkd/regular-text | dmenu -p "type:" -l 3 | xargs xdotool type --clearmodifiers
 
-#shift + button4
-#  xdotool key ctrl+Tab
-#shift + button5
-#  xdotool key ctrl+shift+Tab
+XF86LaunchA
+  clipmenu
 
 XF86Tools
   echo level 0 | sudo tee /proc/acpi/ibm/fan
