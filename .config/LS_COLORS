@@ -55,6 +55,8 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .info                 38;5;184
 .markdown             38;5;221
 .md                   38;5;221
+.rmd                  38;5;221
+.Rmd                  38;5;221
 .mkd                  38;5;221
 .nfo                  38;5;184
 .pod                  38;5;184
