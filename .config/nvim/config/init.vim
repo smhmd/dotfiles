@@ -48,6 +48,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufWritePost /home/me/.config/sxhkd/sxhkdrc !pkill -USR1 sxhkd
 autocmd BufWritePost /home/me/.Xresources !xrdb %
 autocmd BufWritePost /home/me/.config/dunst/dunstrc !killall dunst && setsid dunst > /dev/null 2>&1
+autocmd BufWritePost /home/me/.local/bin/dwmbar !dwmbar > /dev/null 2>&1
+autocmd BufWritePost /home/me/.local/src/dwm/config.h !sudo make --directory '/home/me/.local/src/dwm/' clean install
+autocmd BufWritePost /home/me/.local/src/st/config.h !sudo make --directory '/home/me/.local/src/st/' clean install
 
 " Change Background
 "augroup insertmodecolor
