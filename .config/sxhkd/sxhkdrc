@@ -84,5 +84,5 @@ XF86Explorer
 XF86LaunchA
   clipmenu
 
-XF86Tools
+super + c
   menurc
