@@ -1,17 +1,15 @@
+zplugin light zsh-users/zsh-autosuggestions
+zplugin light zsh-users/zsh-history-substring-search
+zplugin light hlissner/zsh-autopair
 zplugin light MichaelAquilina/zsh-you-should-use
 zplugin light zdharma/fast-syntax-highlighting
-zplugin light marzocchi/zsh-notify
+if xset q &>/dev/null; then
+  zplugin light marzocchi/zsh-notify
+fi
 zplugin light skywind3000/z.lua
-zplugin light jackharrisonsherlock/common
 
 zstyle ':notify:*' notifier ~/.local/bin/zsh-notify
 zstyle ':notify:*' command-complete-timeout 10
 
-COMMON_PROMPT_SYMBOL="$"
-#COMMON_PROMPT_SYMBOL="░"
-COMMON_COLORS_RETURN_STATUS_FALSE=9
-
-common_current_dir() {
-  #echo -n "%{$fg[$COMMON_COLORS_CURRENT_DIR]%}%c%b "
-  echo -n "%F{$COMMON_COLORS_CURRENT_DIR}%B%~%b%f "
-}
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
