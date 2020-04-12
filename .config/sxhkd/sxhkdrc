@@ -34,7 +34,7 @@ XF86Display
 shift + XF86Display
   maim -s --hidecursor --shader=crosshair ~/media/pix/screenshots/$(date +%s).png
 super + p
-  lastmenu
+  bwmenu
 
 XF86HomePage
   chromium
