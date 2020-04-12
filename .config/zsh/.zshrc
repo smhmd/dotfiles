@@ -177,13 +177,15 @@ hash -d videos=$HOME/media/videos
 
 bindkey -s '^o' 'exit\n'  # out
 
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+# Functions
 
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-[ -f "$HOME/.config/zsh/.zshplugins" ] && source "$HOME/.config/zsh/.zshplugins"
-### End of Zplugin installer's chunk
+function e {
+  if [ $# -eq 0 ]; then
+
+    $EDITOR -c 'e #<1'
+  else
+    $EDITOR "$@"
+  fi
+}
 
 source /home/me/.config/broot/launcher/bash/br

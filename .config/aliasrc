@@ -4,7 +4,6 @@ alias sudo="sudo "
 alias setsid="setsid "
 
 alias open="xdg-open"
-alias e="$EDITOR"
 alias o="<"
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
