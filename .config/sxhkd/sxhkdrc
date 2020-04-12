@@ -85,4 +85,4 @@ XF86LaunchA
   clipmenu
 
 XF86Tools
-  echo level 0 | sudo tee /proc/acpi/ibm/fan
+  menurc
