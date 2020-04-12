@@ -1,1 +1,5 @@
--f 'bestvideo[height<=720]+bestaudio/best[height<=720]'
+-f 'bestvideo[height<=?1080][vcodec!=?vp9]+bestaudio/best'
+--sub-format=en
+--sub-lang=en
+--write-sub
+--write-auto-sub
