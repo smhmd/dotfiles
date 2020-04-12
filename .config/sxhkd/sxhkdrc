@@ -37,13 +37,13 @@ super + p
   bwmenu
 
 XF86HomePage
-  chromium
+  $BROWSER
 
 shift + XF86HomePage
-  chromium --incognito
+  $BROWSER --incognito
 
 alt + XF86HomePage
-  google-chrome-unstable
+  $BROWSER --guest
 
 XF86Calculator
   code
