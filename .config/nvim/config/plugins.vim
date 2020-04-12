@@ -46,6 +46,7 @@ Plug 'othree/html5.vim'
 "Plug 'vim-pandoc/vim-rmarkdown'
 
 "Plug 'godlygeek/tabular'
+
 "Plug 'plasticboy/vim-markdown'
 
 
@@ -64,12 +65,14 @@ Plug 'vim-airline/vim-airline-themes'
 
 
 " I N T E R F A C E
+Plug 'thinca/vim-localrc'
+
 "Plug 'preservim/nerdcommenter'
 
 "Plug 'skywind3000/asyncrun.vim'
 
-Plug 'rhysd/clever-f.vim'
-  let g:clever_f_fix_key_direction = 1
+Plug 'unblevable/quick-scope'
+  let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 "Plug 'PeterRincker/vim-argumentative'
 
