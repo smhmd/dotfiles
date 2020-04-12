@@ -39,7 +39,7 @@ colorscheme gruvbox
 
 autocmd BufRead associations set syntax=scheme
 autocmd BufRead .xinitrc set syntax=sh
-autocmd BufNewFile,BufRead *.md set wrap
+autocmd BufNewFile,BufRead *.md,*.rmd set wrap
 autocmd BufRead,BufNewFile *.vue setfiletype html
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
