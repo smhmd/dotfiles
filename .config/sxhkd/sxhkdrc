@@ -31,7 +31,8 @@ super + l
 XF86Display
   maim --hidecursor --shader=crosshair -s | xclip -selection clipboard -t image/png
 
-# Password manager in dmenu
+shift + XF86Display
+  maim -s --hidecursor --shader=crosshair ~/media/pix/screenshots/$(date +%s).png
 super + p
   lastmenu
 
