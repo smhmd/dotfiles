@@ -78,9 +78,6 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
   xbacklight -inc 10
 
-super + shift + x
-  echo 'shutdown now\nreboot' | dmenu -p "do you want to:" -l 2 -nf '#f2e5bc' -sb '#cc241d' -nb '#fb4934' -sf '#f2e5bc' | zsh
-
 XF86Explorer
   < ~/.config/sxhkd/regular-text | dmenu -p "type:" -l 3 | xargs xdotool type --clearmodifiers
 
