@@ -2,12 +2,14 @@
 # Sets DWM bar
 
 BAR_VOLUME="♫ $(pamixer --get-volume)"
-BAR_IS_DISCHARGIN="$(acpi -b | grep 'Discharging' >/dev/null || echo '⚡')"
-BAR_BATTERY="$(cat /sys/class/power_supply/BAT0/capacity 2>/dev/null)"
+BAR_BATTERY="$(< /sys/class/power_supply/BAT0/capacity)" && [[ $BAR_BATTERY -le 20 ]] && notify-send --urgency="critical" "Low Battery" # if battery is below 20%, notify low battery
+
+case $( < /sys/class/power_supply/BAT0/status ) in
+  'Charging') BAR_BAT_SYMBOL='⚡ ' && notify-send --urgency="critical" "Unplug Battery" ;; # if battery is plugged and laptop is charging, give a wanrning
+  '')  BAR_BAT_SYMBOL='⚡' ;;
+  *) BAR_BAT_SYMBOL='' ;;
+esac
+
 BAR_DATE="$(date +"%F] [%R")"
 
-xsetroot -name "[$BAR_VOLUME] [$BAR_IS_DISCHARGIN$BAR_BATTERY] [$BAR_DATE]"
-
-# [[ ! $BAR_BATTERY > "10" ]] && notify-send -u critical "battery:" "$BAR_BATTERY"
-# [[ ! $BAR_BATTERY > "4" ]] &&
-
+xsetroot -name "[$BAR_VOLUME] [$BAR_BAT_SYMBOL$BAR_BATTERY] [$BAR_DATE]"

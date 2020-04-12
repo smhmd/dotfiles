@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+torrentflix="$@"
+peerflixsubs="--subtitles=/tmp/sub.srt"
+
+if test "${torrentflix#*$peerflixsubs}" != "$torrentflix" # test if torrentflix includes peerflixsubs string
+then
+    subs='--sub-file=/tmp/sub.srt ' # if yes, populate this var
+else
+    subs='' # if no, populate it with nothing
+fi
+
+magnet="$(echo $torrentflix | awk -F" " -v quote="'" -v OFS="' '" '$1=$1 {print quote $1 quote}')" # remove anything but the torrentflix link and add quotes around it
+
+echo -n mpv "$subs$magnet" | xclip
+

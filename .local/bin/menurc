@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+
+editrc () {
+  setsid $TERMINAL -e $EDITOR "$1" >/dev/null 2>&1
+}
+
+sudoeditrc() {
+  setsid $TERMINAL -e sudoedit "$1" >/dev/null 2>&1
+}
+
+case "$(printf "zsh\\nneovim init\\nneovim plugins\\nneovim keys\\nneovim functions\\nprofile\\naliases\\nsecure aliases\\ndwm\\nst\\nlf\\nxinit\\nmpv\\nmpv input\\nsxhkd\\nzathura\\npistol\\ndunst\\nlscolors\\nzsh plugins\\njaro\\nbang\\nhosts" | dmenu -l 10 -p "Open config file for:")" in
+  zsh) editrc "$HOME/.config/zsh/.zshrc" & ;;
+  'neovim init') editrc "$HOME/.config/nvim/config/init.vim" & ;;
+  'neovim plugins') editrc "$HOME/.config/nvim/config/plugins.vim" & ;;
+  'neovim keys') editrc "$HOME/.config/nvim/config/keys.vim" & ;;
+  'neovim functions') editrc "$HOME/.config/nvim/config/functions.vim" & ;;
+  profile) editrc "$HOME/.profile" & ;;
+  aliases) editrc "$HOME/.config/aliasrc" & ;;
+  'secure aliases') editrc "$HOME/.config/securealiasrc" & ;;
+  dwm) editrc "$HOME/.local/src/dwm/config.h" & ;;
+  st) editrc "$HOME/.local/src/st/config.h" & ;;
+  lf) editrc "$HOME/.config/lf/lfrc" & ;;
+  xinit) editrc "$HOME/.xinitrc" & ;;
+  mpv) editrc "$HOME/.config/mpv/mpv.conf" & ;;
+  'mpv input') editrc "$HOME/.config/mpv/input.conf" & ;;
+  sxhkd) editrc "$HOME/.config/sxhkd/sxhkdrc" & ;;
+  zathura) editrc "$HOME/.config/zathura/zathurarc" & ;;
+  pistol) editrc "$HOME/.config/pistol/pistol.conf" & ;;
+  dunst) editrc "$HOME/.config/dunst/dunstrc" & ;;
+  lscolors) editrc "$HOME/.config/LS_COLORS" & ;;
+  'zsh plugins') editrc "$HOME/.config/zsh/.zshplugins" & ;;
+  jaro) editrc "$HOME/.config/associations" & ;;
+  bang) editrc "$HOME/.config/bangs.yaml" & ;;
+  hosts) sudoeditrc "/etc/hosts" & ;;
+esac
+
+
+
