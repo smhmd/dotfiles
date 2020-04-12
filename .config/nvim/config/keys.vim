@@ -18,6 +18,6 @@ map <C-l> <C-w>l
 
 " Replace all is aliased to S.
 nnoremap S :%s//g<Left><Left>
-" Coc
-" open completion with ctrl+space
-inoremap <silent><expr> <C-space> coc#refresh()
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR>
