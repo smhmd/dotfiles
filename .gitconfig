@@ -1,15 +1,16 @@
 [user]
-	email = alivefromupstairs@gmail.com
-	name = alivefromupstairs
+  email = contact.simohamed@gmail.com
+  name = smhmd
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
 [core]
-	editor = /usr/bin/nvim
+  editor = /usr/bin/nvim
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [merge]
   tool = vimdiff
@@ -21,3 +22,15 @@
   prompt = false
 [diff]
   tool = vimdiff
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
