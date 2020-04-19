@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-search=$(echo '' | dmenu -p 'bang:') &&
-
-if xclip -o; then
-  search=${search/@@/$(xclip -o)}
-fi
-
-bang $search

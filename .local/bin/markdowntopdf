@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-pandoc $1 -r markdown -V geometry:margin=0.5in --pdf-engine=xelatex --to pdf | zathura -
