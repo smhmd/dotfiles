@@ -1,23 +1,26 @@
-"" Overrides
+nnoremap <CR> o<CR><CR><Up>
+
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Shortcutting split navigation, saving a keypress:
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <Tab> :tabn<CR>
+nnoremap <S-Tab> :tabp<CR>
+
 " movement
 nnoremap j gj
 nnoremap k gk
 
-" vimling
-nm   <leader><leader>d :call ToggleDeadKeys()<CR>
-imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
-nm   <leader><leader>i :call ToggleIPA()<CR>
-imap <leader><leader>i <esc>:call ToggleIPA()<CR>a
-nm   <F8> :call ToggleProse()<CR>
-
-" Shortcutting split navigation, saving a keypress:
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Replace all is aliased to S.
-nnoremap S :%s//g<Left><Left>
+nnoremap S :%s/\V/g<Left><Left>
+vnoremap S :s/\%V/g<Left><Left>
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR>
+"nnoremap <Esc> :nohl<CR><Esc>
