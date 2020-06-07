@@ -9,10 +9,9 @@ alias o="<"
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias dottig='GIT_DIR=$HOME/.dotfiles GIT_WORK_TREE=$HOME tig'
 
-alias cp="cp -i"                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
-
+alias cp="cp -i"
+alias df='df -h'
+alias free='free -m'
 
 alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
 alias -s {jpg,jpeg,png,mng,tiff,tif,xpm}=$XIVIEWER
