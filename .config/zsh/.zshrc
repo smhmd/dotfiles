@@ -22,6 +22,7 @@ setopt autocd                       # if only directory path is entered, cd ther
 setopt histignorespace              # commands prefixed with a space will not be added to HISTORY
 setopt prompt_subst                 # enable substitution for prompt
 setopt globdots                     # completion to show hidden files
+#unsetopt multios                    # duplicates the output streams (similiar to tee)
 
 # Completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -40,11 +41,17 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>|'  # Don't consider certain characters part of
 [ -f "$HOME/.config/securealiasrc" ] && source "$HOME/.config/securealiasrc"
 
 # Autoload
-# zplugin
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin compinit colors
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-colors
+if [[ ! -f $HOME/.config/zsh/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.config/zsh/.zinit" && command chmod g-rwX "$HOME/.config/zsh/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.config/zsh/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.config/zsh/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit compinit colors
+(( ${+_comps} )) && _comps[zinit]=_zinit
 # Check completion once a day https://gist.github.com/ctechols/ca1035271ad134841284
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
 	compinit;
