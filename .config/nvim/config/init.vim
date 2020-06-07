@@ -33,6 +33,9 @@ set wildmenu
 set complete=.,w,b,u,t,i,kspell
 colorscheme gruvbox
 
+set splitbelow splitright
+set fillchars+=vert:\  " let space here
+
 "autocmd BufNewFile * startinsert
 "autocmd VimEnter * if empty(expand("%")) | startinsert | endif
 "autocmd VimEnter * if getfsize(expand("%")) == 0 | startinsert | endif
@@ -51,6 +54,12 @@ autocmd BufWritePost /home/me/.config/dunst/dunstrc !killall dunst && setsid dun
 autocmd BufWritePost /home/me/.local/bin/dwmbar !dwmbar > /dev/null 2>&1
 autocmd BufWritePost /home/me/.local/src/dwm/config.h !sudo make --directory '/home/me/.local/src/dwm/' clean install
 autocmd BufWritePost /home/me/.local/src/st/config.h !sudo make --directory '/home/me/.local/src/st/' clean install
+
+" jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
 
 " Change Background
 "augroup insertmodecolor
