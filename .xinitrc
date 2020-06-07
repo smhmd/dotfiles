@@ -12,6 +12,7 @@ clipmenud > /dev/null 2>&1 &                                                    
 unclutter --ignore-scrolling --jitter 1 > /dev/null 2>&1 &                                          # Remove mouse on idle
 setroot --blank-color "#32302f" > /dev/null 2>&1 &      # Wallpaper
 dunst > /dev/null 2>&1 &                                                                            # Notification daemon
+sudo hostctl enable --all -q 2>&1 &
 
 while true; do
 	dwm 2> ~/.dwm.log
