@@ -47,6 +47,7 @@ map ,m cd /run/media/me
 # map actions
 map <enter> open
 map <tab> mark-load
+map ` mark-save
 map <esc> clear
 map x :delete
 map E &setsid st -e nvim $fx
