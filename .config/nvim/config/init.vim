@@ -1,6 +1,6 @@
 " Init settings "
 """"""""""""""""""""
-let mapleader = "\<space>"
+let mapleader=","
 
 set noautoindent
 "set autoindent
