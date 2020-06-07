@@ -107,4 +107,5 @@ function e {
   fi
 }
 
-[ -f "$HOME/.config/zsh/.zshplugins" ] && source "$HOME/.config/zsh/.zshplugins"
+# Plugins
+[ -f "/home/me/.config/zsh/.zinitplugins" ] && source "/home/me/.config/zsh/.zinitplugins"
