@@ -57,6 +57,11 @@
 )
 
 (assoc
+  #:pattern "^https?://boards.4chan.org/.*"
+  #:program "notify-send 'chandler downloading...' '%f' && chandler -d '/home/me/media/videos/4chan/{BOARD}/{THREAD}' -s '%f'; notify-send 'chandler done'"
+)
+
+(assoc
   #:pattern "^https?://.*"
   #:program "url-handler %f"
 )
