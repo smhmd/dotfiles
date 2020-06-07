@@ -1,58 +1,63 @@
-set guioptions none                                               # remove statusbar
+set guioptions                 none       # remove statusbar
 set font "Iosevka 9"
-#set render-loading "false"
-
 set adjust-open "width"
-set recolor-keephue "true"
-#set recolor "true"
-#set recolor-reverse-video "true"
 
-set scroll-page-aware "true"
-#set scroll-full-overlap 2
-set scroll-step 50
+#set scroll-page-aware "true"
+##set scroll-full-overlap 2
+#set scroll-step 50
 
-set statusbar-fg "#f2e5bc"
-set statusbar-bg "#000000"
+set notification-error-bg       "#fbf1c7"  # bg
+set notification-error-fg       "#9d0006"  # bright:red
+set notification-warning-bg     "#fbf1c7"  # bg
+set notification-warning-fg     "#b57614"  # bright:yellow
+set notification-bg             "#fbf1c7"  # bg
+set notification-fg             "#79740e"  # bright:green
 
-set inputbar-fg "#FFFFFF"
-set default-bg '#000000'
+set completion-bg               "#d5c4a1"  # bg2
+set completion-fg               "#3c3836"  # fg
+set completion-group-bg         "#ebdbb2"  # bg1
+set completion-group-fg         "#928374"  # gray
+set completion-highlight-bg     "#076678"  # bright:blue
+set completion-highlight-fg     "#d5c4a1"  # bg2
 
-#set recolor-lightcolor \#282828
-#set recolor-darkcolor \#f2e5bc
+# Define the color in index mode
+set index-bg                    "#d5c4a1"  # bg2
+set index-fg                    "#3c3836"  # fg
+set index-active-bg             "#076678"  # bright:blue
+set index-active-fg             "#d5c4a1"  # bg2
 
-set notification-error-bg "#AC4142"
-set notification-error-fg "#151515"
+set inputbar-bg                 "#fbf1c7"  # bg
+set inputbar-fg                 "#3c3836"  # fg
 
-set notification-warning-bg "#AC4142"
-set notification-warning-fg "#151515"
+set statusbar-bg                "#d5c4a1"  # bg2
+set statusbar-fg                "#3c3836"  # fg
 
-set highlight-color "#F4BF75"
-set highlight-active-color "#6A9FB5"
+set highlight-color             "#b57614"  # bright:yellow
+set highlight-active-color      "#af3a03"  # bright:orange
 
-set completion-highlight-fg "#151515"
-set completion-highlight-bg "#90A959"
+set default-bg                  "#ffffff"  # bg
+set default-fg                  "#3c3836"  # fg
+set render-loading              true
+set render-loading-bg           "#fbf1c7"  # bg
+set render-loading-fg           "#3c3836"  # fg
 
-set completion-bg "#303030"
-set completion-fg "#E0E0E0"
-
-set notification-bg "#90A959"
-set notification-fg "#151515"
+# Recolor book content's color
+set recolor-lightcolor          "#111111"  # bg
+set recolor-darkcolor           "#ffffff"  # fg
+#set recolor                     "true"
+set recolor-keephue             false       # keep original color
+set recolor-reverse-video       "true"
 
 set statusbar-h-padding 0
 set statusbar-v-padding 0
-
 set page-padding 0
 
-set incremental-search "true"                                     # search on keystroke
-set selection-clipboard clipboard                                 # use primary clipboard
+set incremental-search           "true"    # search on keystroke
+set selection-clipboard          clipboard # use primary clipboard
 #set show-scrollbars true
 
-map D toggle_page_mode
-map r reload
-map R rotate
-map i recolor
-map p print
-
-map t feedkeys ":set default-bg \#282828<Return>"                 # set background to black (t key)
-map T feedkeys ":set default-bg '#ffffff'<Return>"                # set background to white (shif+t key)
-map ' feedkeys ":set recolor-keephue<Return>"
+map D                            toggle_page_mode
+map r                            reload
+map R                            rotate
+map i                            recolor
+map p                            print
