@@ -13,6 +13,7 @@ alias cp="cp -i"
 alias df='df -h'
 alias free='free -m'
 
+alias -s git="git clone --depth 1"
 alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
 alias -s {jpg,jpeg,png,mng,tiff,tif,xpm}=$XIVIEWER
 alias -s {htm,html,de,org,net,com,at,cx,nl,se,dk}=$BROWSER
