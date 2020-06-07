@@ -1,5 +1,5 @@
 super + Escape
-  pkill x
+  xkill
 
 super + shift + Escape
   sudo shutdown +0
@@ -12,12 +12,6 @@ super + grave
 
 super + d
   dmenu_run -m "0" -l 5
-
-super + s
-  bang-menu
-
-super + shift + s
-  bang-cb
 
 super + e
   st -e lf
@@ -32,9 +26,7 @@ XF86Display
   maim --hidecursor --shader=crosshair -s | xclip -selection clipboard -t image/png
 
 shift + XF86Display
-  maim -s --hidecursor --shader=crosshair ~/media/pix/screenshots/$(date +%s).png
-super + p
-  bwmenu
+  maim -s --hidecursor --shader=crosshair /home/me/media/pix/screenshots/$(date +%s).jpg
 
 XF86HomePage
   $BROWSER
@@ -83,6 +75,9 @@ XF86Explorer
 
 XF86LaunchA
   clipmenu
+
+XF86WLAN
+  sudo systemctl restart NetworkManager.service
 
 super + c
   menurc
