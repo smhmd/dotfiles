@@ -21,7 +21,7 @@ alias -s {cpp,cxx,cc,c,hh,h,inl,asc,md,txt,TXT,tex,conf,config}=nvim
 alias -s pdf="zathura"
 alias -s gif="$XIVIEWER -a"
 
-alias refresh="source $HOME/.config/zsh/.zshrc && source $HOME/.profile"
+alias refresh="exec -l zsh"
 
 alias ls='exa -1 --group-directories-first'
 alias ll='exa -l --git --group-directories-first'
@@ -44,12 +44,10 @@ alias aurr="yay -R"
 alias aurrns="yay -Rns --noconfirm"
 
 alias aria="aria2c -x8 --allow-overwrite"
-alias connected="ping -c 2 google.com"
+alias cn="ping -c 2 google.com"
 alias fan-status="bat -p /proc/acpi/ibm/fan"
 alias c.="code . && exit"
 alias peerflix="peerflix -kd"
 alias rename-2-kebabcase="node ~/build/rename-2-kebabcase/index.js"
-alias toggle-hc="sudo hostctl toggle -q --wait 0 -p"
-alias disable-hc="sudo hostctl enable -q -p"
-alias enable-hc="sudo hostctl disable -q -p"
-alias hc="hostctl"
+
+alias hc="sudo hostctl"
