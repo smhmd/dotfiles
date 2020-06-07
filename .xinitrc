@@ -10,7 +10,7 @@ xset r rate 300 50 > /dev/null 2>&1                                             
 sxhkd > /dev/null 2>&1 &                                                                            # Hotkey daemon
 clipmenud > /dev/null 2>&1 &                                                                        # Clipboard management
 unclutter --ignore-scrolling --jitter 1 > /dev/null 2>&1 &                                          # Remove mouse on idle
-setroot --blank-color "$(grep 'color16' ~/.Xresources  | awk '{print $2}')" > /dev/null 2>&1 &      # Wallpaper
+setroot --blank-color "#32302f" > /dev/null 2>&1 &      # Wallpaper
 dunst > /dev/null 2>&1 &                                                                            # Notification daemon
 
 while true; do
