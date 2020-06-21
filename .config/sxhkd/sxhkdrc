@@ -71,7 +71,7 @@ XF86MonBrightnessUp
   xbacklight -inc 10
 
 XF86Explorer
-  < ~/.config/sxhkd/regular-text | dmenu -p "type:" -l 3 | xargs xdotool type --clearmodifiers
+  < ~/.config/sxhkd/regular-text | dmenu -p "type:" -l 4 | xargs xdotool type --clearmodifiers
 
 XF86LaunchA
   clipmenu
