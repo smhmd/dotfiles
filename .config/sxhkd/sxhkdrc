@@ -26,7 +26,7 @@ XF86Display
   maim --hidecursor --shader=crosshair -s | xclip -selection clipboard -t image/png
 
 shift + XF86Display
-  maim -s --hidecursor --shader=crosshair /home/me/media/pix/screenshots/$(date +%s).jpg
+  maim -s --hidecursor --shader=crosshair /home/me/media/pix/screenshots/$(date +%s).png
 
 XF86HomePage
   $BROWSER
