@@ -42,7 +42,12 @@
 )
 
 (assoc
-  #:pattern '("^application/pdf$" "^application/epub+zip$")
+  #:pattern "application/epub"
+  #:program "zathura %f"
+)
+
+(assoc
+  #:pattern "^application/pdf$"
   #:program "zathura %f"
 )
 
