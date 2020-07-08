@@ -102,6 +102,7 @@ hash -d pix=$HOME/media/pix
 hash -d podcasts=$HOME/media/podcasts
 hash -d talks=$HOME/media/talks
 hash -d tv=$HOME/media/tv
+hash -d videos=$HOME/media/videos
 
 hash -d downloads=/tmp/downloads
 
