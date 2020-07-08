@@ -63,4 +63,4 @@ eval "$(dircolors $HOME/.config/LS_COLORS)"
 
 mkdir -p /tmp/downloads
 [[ ! -L /tmp/downloads/articles ]] && ln -s $HOME/media/articles /tmp/downloads/articles
-[ "$(tty)" = "/dev/tty2" ] && ! pgrep -x Xorg >/dev/null && exec startx
+[ "$(tty)" = "/dev/tty2" ] && ! pgrep -x Xorg >/dev/null && date +'%d %A %R' && exec startx
