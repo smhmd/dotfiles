@@ -10,6 +10,6 @@ case $( < /sys/class/power_supply/BAT0/status ) in
   *) BAR_BAT_SYMBOL='' ;;
 esac
 
-BAR_DATE="$(date +"%F] [%R")"
+BAR_DATE="$(date +"%d %A] [%R")"
 
 xsetroot -name "[$BAR_VOLUME] [$BAR_BAT_SYMBOL$BAR_BATTERY] [$BAR_DATE]"
