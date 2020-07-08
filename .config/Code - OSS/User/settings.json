@@ -1,0 +1,89 @@
+{
+  "workbench.settings.editor": "json",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.suggestSelection": "first",
+  "window.enableMenuBarMnemonics": false,
+  "javascript.suggest.completeFunctionCalls": true,
+  "git.autofetch": true,
+  "files.associations": {
+    "*.vuerc": "json",
+    "*.bash*": "shellscript",
+    "*.fehbg": "shellscript",
+    "config": "shellscript",
+    "*.conf": "shellscript"
+  },
+  "files.simpleDialog.enable": true,
+  "git.defaultCloneDirectory": "~/experiment",
+  "search.useGlobalIgnoreFiles": true,
+  "explorer.confirmDragAndDrop": false,
+  "material-icon-theme.hidesExplorerArrows": true,
+  "editor.snippetSuggestions": "top",
+  "explorer.incrementalNaming": "smart",
+  "editor.fontFamily": "Iosevka SS03",
+  "terminal.integrated.fontFamily": "Iosevka SS03",
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "vue_vuex",
+  "material-icon-theme.folders.associations": {
+    "_site": "dist",
+    "blog": "content",
+    ".vimpress": "vue-directives",
+    ".vuepress": "vue-directives",
+    "diffs": "batch",
+    ".config": "config",
+    ".vscode-oss": "vscode",
+    "code": "src",
+    "media": "video"
+  },
+  "material-icon-theme.files.associations": {
+    ".vuerc": "vue-config",
+    "gridsome.config.js": "settings",
+    "gridsome.server.js": "json",
+    ".eleventy.js": "json"
+  },
+  "breadcrumbs.symbolPath": "off",
+  "material-icon-theme.folders.color": "#464646",
+  "window.menuBarVisibility": "hidden",
+  "workbench.activityBar.visible": true,
+  "workbench.startupEditor": "none",
+  "extensions.closeExtensionDetailsOnViewChange": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "vscode-neovim.neovimPath": "/usr/bin/nvim",
+  "vetur.completion.scaffoldSnippetSources": {
+    "vetur": ""
+  },
+  "vetur.grammar.customBlocks": {
+    "docs": "md",
+    "i18n": "json",
+    "page-query": "graphql",
+    "static-query": "graphql"
+  },
+  "vetur.validation.template": false,
+  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.packageManager": "yarn",
+  "terminal.integrated.rendererType": "auto",
+  "keyboard.dispatch": "keyCode",
+  "stylelint.enable": true,
+  "css.validate": false,
+  "tailwindCSS.emmetCompletions": true,
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "workbench.statusBar.visible": true,
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)"
+}
