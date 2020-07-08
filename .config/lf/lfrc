@@ -71,8 +71,11 @@ map R ${{
 }}
 
 # open
-map om &setsid mpv .
-map oM &setsid mpv --keepaspect-window .
+map oM &setsid mpv .
+map omp &setsid mpv --profile=pitch .
+map omP &setsid mpv --af=atempo=2 --vf=lavfi='[setpts=PTS/2]' .
+map oma &setsid mpv --keepaspect-window .
+map oml &setsid mpv --loop .
 map os &setsid sxiv .
 map oa &setsid chromiumapp $fx
 map ot &setsid mpv --referrer="https://twist.moe/" --playlist=episodes --prefetch-playlist
