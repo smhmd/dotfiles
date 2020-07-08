@@ -2,6 +2,7 @@
 """"""""""""""""""""
 let mapleader=","
 
+set clipboard^=unnamedplus
 set noautoindent
 "set autoindent
 "set smartindent
