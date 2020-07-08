@@ -3,3 +3,4 @@
 --sub-lang=en
 --write-sub
 --write-auto-sub
+-o "%(playlist_index)s-%(title)s.%(ext)s"
