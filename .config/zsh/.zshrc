@@ -22,6 +22,7 @@ setopt autocd                       # if only directory path is entered, cd ther
 setopt histignorespace              # commands prefixed with a space will not be added to HISTORY
 setopt prompt_subst                 # enable substitution for prompt
 setopt globdots                     # completion to show hidden files
+setopt magicequalsubst              # evaluate ~dir in arguments (hash -d)
 #unsetopt multios                    # duplicates the output streams (similiar to tee)
 
 # Completion
