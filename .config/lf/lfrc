@@ -87,9 +87,9 @@ cmap <c-h> cmd-word-back
 cmap <c-l> cmd-word
 
 # functions
-cmd open &setsid xdg-open $fx # && lf -remote "send $id :reload"
 cmd dotfiles $/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $fx
 cmd +x &chmod +x $fx
 cmd 644 &chmod 644 $fx
 cmd kebab !node ~/build/rename-2-kebabcase/index.js -r .
 cmd nautilus &nautilus .
+cmd wall &setroot $fx
