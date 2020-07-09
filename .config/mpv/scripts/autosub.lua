@@ -1,0 +1,1 @@
+/home/me/.config/mpv/scripts_repos/mpv-autosub/autosub.lua
