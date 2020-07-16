@@ -56,7 +56,7 @@
 		"peerflix_path": "",
 		"peerflix_command": "handlemagnet",
 		"use_subtitle": "true",
-		"subtitle_language": "french",
+		"subtitle_language": "english",
 		"history": "false",
 		"date_added": "false"
 	}
