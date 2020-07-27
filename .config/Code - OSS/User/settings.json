@@ -47,7 +47,7 @@
   "breadcrumbs.symbolPath": "off",
   "material-icon-theme.folders.color": "#464646",
   "window.menuBarVisibility": "hidden",
-  "workbench.activityBar.visible": true,
+  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "none",
   "extensions.closeExtensionDetailsOnViewChange": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -82,5 +82,11 @@
   },
   "window.zoomLevel": 0,
   "workbench.statusBar.visible": true,
-  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)"
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
