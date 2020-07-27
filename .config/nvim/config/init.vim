@@ -62,13 +62,6 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
-" Change Background
-"augroup insertmodecolor
-"  autocmd!
-"  autocmd InsertEnter * call (let g:gruvbox_contrast_dark = 'medium')
-"  autocmd InsertLeave * call (let g:gruvbox_contrast_dark = 'medium')
-"augroup END
-
 " Netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
