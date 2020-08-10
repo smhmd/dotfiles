@@ -11,6 +11,8 @@
   "DisableWindowTitleUpdates": false,
   "FirstRunSettingsDisplayed": true,
   "IndexerLogEnabled": false,
+  "IndexerThreadCount": 4,
+  "IndexerTransactionInterval": 300,
   "InheritBackgroundColor": false,
   "LastAcknowledgedUpdateVersion": "0.93.1",
   "LastBrowseCategoryId": 55.0,
