@@ -29,13 +29,13 @@ shift + XF86Display
   maim -s --hidecursor --shader=crosshair /home/me/media/pix/screenshots/$(date +%s).png
 
 XF86HomePage
-  $BROWSER
+  $BROWSER --force-dark-mode
 
 shift + XF86HomePage
   $BROWSER --incognito
 
 alt + XF86HomePage
-  $BROWSER --guest
+  $BROWSER --guest --force-dark-mode
 
 XF86Calculator
   code
