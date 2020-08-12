@@ -52,7 +52,12 @@
 )
 
 (assoc
-  #:pattern '("^application/zip$" "^application/x-rar$")
+  #:pattern "^application/zip$"
+  #:program "unzip %f"
+)
+
+(assoc
+  #:pattern "^application/x-rar$"
   #:program "unar %f"
 )
 
