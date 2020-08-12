@@ -5,31 +5,31 @@ alias setsid="setsid -w "
 
 alias open="xdg-open"
 alias o="<"
+alias se="sudoedit"
+
+alias refresh="exec -l zsh"
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias dottig='GIT_DIR=$HOME/.dotfiles GIT_WORK_TREE=$HOME tig'
-
-alias cp="cp -i"
-alias df='df -h'
-alias free='free -m'
 
 alias -s git="git clone --depth 1"
 alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
 alias -s {jpg,jpeg,png,mng,tiff,tif,xpm}=$XIVIEWER
 alias -s {htm,html,de,org,net,com,at,cx,nl,se,dk}=$BROWSER
 alias -s {cpp,cxx,cc,c,hh,h,inl,asc,md,txt,TXT,tex,conf,config}=nvim
+alias -s py="python"
 alias -s pdf="zathura"
 alias -s gif="$XIVIEWER -a"
 
-alias refresh="exec -l zsh"
-
+alias cp="cp -i"
+alias df='df -h'
+alias free='free -m'
 alias ls='exa -1 --group-directories-first'
 alias ll='exa -l --git --group-directories-first'
 alias la='exa -la --git --group-directories-first'
-alias ping="prettyping"
 
 alias pac="sudo pacman -S --needed --noconfirm"
-alias pacs="sudo pacman -Ss"
+alias pacs="pacman -Ss"
 alias pacy="sudo pacman -Sy"
 alias pacyu="sudo pacman -Syu"
 alias pacr="sudo pacman -R"
@@ -45,9 +45,9 @@ alias aurrns="yay -Rns --noconfirm"
 
 alias aria="aria2c -x8 --allow-overwrite"
 alias cn="ping -c 2 google.com"
-alias fan-status="bat -p /proc/acpi/ibm/fan"
+alias fan="cat -p /proc/acpi/ibm/fan"
 alias c.="code . && exit"
-alias peerflix="peerflix -kd"
-alias rename-2-kebabcase="node ~/build/rename-2-kebabcase/index.js"
 
+alias yaourt="yay"
 alias hc="sudo hostctl"
+alias sv="sudo sv"
