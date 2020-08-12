@@ -22,8 +22,8 @@
   "material-icon-theme.hidesExplorerArrows": true,
   "editor.snippetSuggestions": "top",
   "explorer.incrementalNaming": "smart",
-  "editor.fontFamily": "Iosevka SS03",
-  "terminal.integrated.fontFamily": "Iosevka SS03",
+  "editor.fontFamily": "Iosevka",
+  "terminal.integrated.fontFamily": "Iosevka",
   "editor.fontLigatures": true,
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "vue_vuex",
@@ -53,7 +53,7 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
-  "vscode-neovim.neovimPath": "/usr/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "vetur.completion.scaffoldSnippetSources": {
     "vetur": ""
   },
@@ -82,11 +82,14 @@
   },
   "window.zoomLevel": 0,
   "workbench.statusBar.visible": true,
-  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.customMenuBarAltFocus": false,
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
