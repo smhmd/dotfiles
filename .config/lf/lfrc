@@ -6,7 +6,7 @@ set dircounts on
 set color256 on
 set wrapscroll on
 set incsearch on
-set previewer /home/me/.go/bin/pistol
+set previewer /usr/bin/pistol
 
 # Unmap
 map c
@@ -35,8 +35,7 @@ map gp cd ~/media/papers
 map gx cd ~/media/pix
 map go cd ~/media/podcasts
 map gw cd ~/media/pix/wallpapers
-map gt cd ~/media/talks
-map gT cd ~/media/tv
+map gt cd ~/media/tv
 map gv cd ~/media/videos
 
 # root
@@ -69,6 +68,7 @@ map R ${{
   rm $old $new
   lf -remote "send $id unselect"
 }}
+map D &dragon-drag-and-drop --and-exit $fx
 
 # open
 map oM &setsid mpv .
@@ -78,7 +78,6 @@ map oma &setsid mpv --keepaspect-window .
 map oml &setsid mpv --loop .
 map os &setsid sxiv .
 map oa &setsid chromiumapp $fx
-map ot &setsid mpv --referrer="https://twist.moe/" --playlist=episodes --prefetch-playlist
 
 # map actions in command line
 cmap <up> cmd-history-prev
@@ -87,6 +86,7 @@ cmap <c-h> cmd-word-back
 cmap <c-l> cmd-word
 
 # functions
+cmd open &/usr/bin/setsid /home/me/.local/bin/xdg-open $fx
 cmd dotfiles $/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add $fx
 cmd +x &chmod +x $fx
 cmd 644 &chmod 644 $fx
