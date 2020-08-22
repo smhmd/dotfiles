@@ -43,4 +43,6 @@ Plug 'kovetskiy/sxhkd-vim'
 
 Plug 'VebbNix/lf-vim'
 
+Plug 'sheerun/vim-polyglot'
+
 call plug#end()
