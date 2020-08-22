@@ -3,9 +3,7 @@
 let mapleader=","
 
 set clipboard^=unnamedplus
-set noautoindent
-"set autoindent
-"set smartindent
+filetype indent off
 set smartcase
 set ignorecase
 set autoread
