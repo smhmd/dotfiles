@@ -15,10 +15,12 @@ Plug 'tmsvg/pear-tree'
 " T H E M I N G
 Plug 'vim-airline/vim-airline'
 
-Plug 'morhetz/gruvbox'
+Plug 'dikiaap/minimalist'
 
 Plug 'vim-airline/vim-airline-themes'
-  let g:airline_theme='gruvbox'
+  let g:airline_theme='minimalist'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
 
 Plug 'lilydjwg/colorizer'
 

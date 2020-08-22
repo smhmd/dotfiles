@@ -1,4 +1,4 @@
-nnoremap <CR> o<CR><CR><Up>
+nnoremap <CR> o<Esc>
 
 " Make adjusing split sizes a bit more friendly
 noremap <silent> <C-Left> :vertical resize +3<CR>

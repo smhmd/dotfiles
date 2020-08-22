@@ -30,7 +30,8 @@ set backupcopy=yes "disable safe write for hmr in parcel
 set wildmode=longest,list,full "completion
 set wildmenu
 set complete=.,w,b,u,t,i,kspell
-colorscheme gruvbox
+set t_Co=256
+colorscheme minimalist
 
 set splitbelow splitright
 set fillchars+=vert:\  " let space here
@@ -50,9 +51,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufWritePost /home/me/.config/sxhkd/sxhkdrc !pkill -USR1 sxhkd
 autocmd BufWritePost /home/me/.Xresources !xrdb %
 autocmd BufWritePost /home/me/.config/dunst/dunstrc !killall dunst && setsid dunst > /dev/null 2>&1
-autocmd BufWritePost /home/me/.local/bin/dwmbar !dwmbar > /dev/null 2>&1
-autocmd BufWritePost /home/me/.local/src/dwm/config.h !sudo make --directory '/home/me/.local/src/dwm/' clean install
-autocmd BufWritePost /home/me/.local/src/st/config.h !sudo make --directory '/home/me/.local/src/st/' clean install
 
 " jump to the last position when reopening a file
 if has("autocmd")
