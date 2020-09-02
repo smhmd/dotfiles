@@ -10,9 +10,6 @@ super + Return
 super + grave
   st
 
-super + d
-  dmenu_run -m "0" -l 5
-
 super + e
   st -e lf
 
@@ -32,7 +29,7 @@ XF86HomePage
   $BROWSER --force-dark-mode
 
 shift + XF86HomePage
-  $BROWSER --incognito
+  $BROWSER --incognito --force-dark-mode
 
 alt + XF86HomePage
   $BROWSER --guest --force-dark-mode
@@ -41,7 +38,7 @@ XF86Calculator
   code
 
 shift + XF86Calculator
-  st -e musikcube
+  mpv --player-operation-mode=pseudo-gui
 
 super + XF86Calculator
   st -e eva
@@ -59,10 +56,10 @@ super + {minus, plus}
   playerctl volume {0.1-, 0.1+}
 
 XF86AudioLowerVolume
-  pactl set-sink-volume 0 -5% && dwmbar
+  amixer set Master 2-
 
 XF86AudioRaiseVolume
-  pactl set-sink-volume 0 +5% && dwmbar
+  amixer set Master 2+
 
 XF86MonBrightnessDown
   xbacklight -dec 9
@@ -71,7 +68,7 @@ XF86MonBrightnessUp
   xbacklight -inc 10
 
 XF86Explorer
-  < ~/.config/sxhkd/regular-text | dmenu -p "type:" -l 4 | xargs xdotool type --clearmodifiers
+  < ~/.config/sxhkd/regular-text | dmenu -p "type:" -g 2 -l 2 | xargs xdotool type --clearmodifiers
 
 XF86LaunchA
   clipmenu
@@ -81,3 +78,9 @@ XF86WLAN
 
 super + c
   menurc
+
+#XF86AudioMicMute
+  #  notify-send "Volume is $()%"
+
+XF86Tools
+  notify-send "Battery capacity is $(< /sys/class/power_supply/BAT0/capacity || echo '∞')%"
