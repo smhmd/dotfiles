@@ -39,7 +39,6 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>|'  # Don't consider certain characters part of
 
 # Alias
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-[ -f "$HOME/.config/securealiasrc" ] && source "$HOME/.config/securealiasrc"
 
 # Autoload
 if [[ ! -f $HOME/.config/zsh/.zinit/bin/zinit.zsh ]]; then
