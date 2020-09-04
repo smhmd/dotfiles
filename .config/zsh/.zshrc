@@ -81,6 +81,7 @@ bindkey '^[[B' history-substring-search-down
 _zsh_cli_fg() { fg; }                               ##
 zle -N _zsh_cli_fg                                  # set ctrl+z to run fg if not jobs
 bindkey '^Z' _zsh_cli_fg                            ##
+bindkey "^X" _expand_alias                          # set ctrl+x to exapand aliases
 
 
 # Shortcuts
