@@ -10,7 +10,6 @@
   ui = true
 [core]
   editor = /usr/bin/nvim
-  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [merge]
   tool = vimdiff
@@ -34,3 +33,5 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+[hub]
+	protocol = ssh
