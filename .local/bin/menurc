@@ -1,28 +1,29 @@
 #!/usr/bin/env sh
 
-case "$(printf "zsh\\nneovim init\\nneovim plugins\\nneovim keys\\nneovim functions\\nprofile\\naliases\\nsecure aliases\\ndwm\\nst\\nlf\\nxinit\\nmpv\\nmpv input\\nsxhkd\\nzathura\\npistol\\ndunst\\nlscolors\\nzinit\\njaro\\nbang\\nhosts\\ntmux" | dmenu -l 10 -p "Open config file for:")" in
-  zsh) $TERMINAL -e $EDITOR "$HOME/.config/zsh/.zshrc" ;;
-  'neovim init') $TERMINAL -e $EDITOR "$HOME/.config/nvim/config/init.vim" ;;
-  'neovim plugins') $TERMINAL -e $EDITOR "$HOME/.config/nvim/config/plugins.vim" ;;
-  'neovim keys') $TERMINAL -e $EDITOR "$HOME/.config/nvim/config/keys.vim" ;;
-  'neovim functions') $TERMINAL -e $EDITOR "$HOME/.config/nvim/config/functions.vim" ;;
-  profile) $TERMINAL -e $EDITOR "$HOME/.profile" ;;
-  aliases) $TERMINAL -e $EDITOR "$HOME/.config/aliasrc" ;;
-  'secure aliases') $TERMINAL -e $EDITOR "$HOME/.config/securealiasrc" ;;
-  dwm) $TERMINAL -e $EDITOR "$HOME/.local/src/dwm/config.h" ;;
-  st) $TERMINAL -e $EDITOR "$HOME/.local/src/st/config.h" ;;
-  lf) $TERMINAL -e $EDITOR "$HOME/.config/lf/lfrc" ;;
-  xinit) $TERMINAL -e $EDITOR "$HOME/.xinitrc" ;;
-  mpv) $TERMINAL -e $EDITOR "$HOME/.config/mpv/mpv.conf" ;;
-  'mpv input') $TERMINAL -e $EDITOR "$HOME/.config/mpv/input.conf" ;;
-  sxhkd) $TERMINAL -e $EDITOR "$HOME/.config/sxhkd/sxhkdrc" ;;
-  zathura) $TERMINAL -e $EDITOR "$HOME/.config/zathura/zathurarc" ;;
-  pistol) $TERMINAL -e $EDITOR "$HOME/.config/pistol/pistol.conf" ;;
-  dunst) $TERMINAL -e $EDITOR "$HOME/.config/dunst/dunstrc" ;;
-  lscolors) $TERMINAL -e $EDITOR "$HOME/.config/LS_COLORS" ;;
-  zinit) $TERMINAL -e $EDITOR "/home/me/.config/zsh/.zinitplugins" ;;
-  jaro) $TERMINAL -e $EDITOR "$HOME/.config/associations" ;;
-  bang) $TERMINAL -e $EDITOR "$HOME/.config/bangs.yaml" ;;
-  hosts) $TERMINAL -e sudo vim "/etc/hosts" ;;
-  tmux) $TERMINAL -e $EDITOR "$HOME/.config/tmux/tmux.conf" ;;
+programs='spectrwm\nspectrwm keys\nzsh\nnvim init\nnvim plugins\nnvim keys\nnvim functions\nprofile\naliases\nst\ndmenu\nlf\nxinit\nmpv\nmpv input\nsxhkd\nzathura\ndunst\nzinit\njaro\nhosts'
+
+program="$(echo -e $programs | dmenu -g 3 -l 7 -p 'Open config file for:')"
+
+case "$program" in
+  spectrwm) st -e nvim "/home/me/.config/spectrwm/spectrwm.conf" ;;
+  'spectrwm keys') st -e nvim "/home/me/.config/spectrwm/spectrwm_us.conf" ;;
+  zsh) st -e nvim "$HOME/.config/zsh/.zshrc" ;;
+  'nvim init') st -e nvim "$HOME/.config/nvim/config/init.vim" ;;
+  'nvim plugins') st -e nvim "$HOME/.config/nvim/config/plugins.vim" ;;
+  'nvim keys') st -e nvim "$HOME/.config/nvim/config/keys.vim" ;;
+  'nvim functions') st -e nvim "$HOME/.config/nvim/config/functions.vim" ;;
+  profile) st -e nvim "$HOME/.profile" ;;
+  aliases) st -e nvim "$HOME/.config/aliasrc" ;;
+  st) st -e nvim "$HOME/.local/src/st/config.h" ;;
+  dmenu) st -e nvim "$HOME/.local/src/dmenu/config.h" ;;
+  lf) st -e nvim "$HOME/.config/lf/lfrc" ;;
+  xinit) st -e nvim "$HOME/.xinitrc" ;;
+  mpv) st -e nvim "$HOME/.config/mpv/mpv.conf" ;;
+  'mpv input') st -e nvim "$HOME/.config/mpv/input.conf" ;;
+  sxhkd) st -e nvim "$HOME/.config/sxhkd/sxhkdrc" ;;
+  zathura) st -e nvim "$HOME/.config/zathura/zathurarc" ;;
+  dunst) st -e nvim "$HOME/.config/dunst/dunstrc" ;;
+  zinit) st -e nvim "$HOME/.config/zsh/.zinitplugins" ;;
+  jaro) st -e nvim "$HOME/.config/associations" ;;
+  hosts) st -e sudo vim "/etc/hosts" ;;
 esac
