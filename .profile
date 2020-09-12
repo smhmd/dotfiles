@@ -9,6 +9,27 @@ export FILE="lf"
 export STATUSBAR="dwmbar"
 export XIVIEWER="sxiv"
 
+export font="Iosevka:size=8"
+
+export background='#1c1c1c'
+export foreground='#eeeeee'
+export black0='#1c1c1c'
+export black1='#7c7c7c'
+export red0='#cc3833'
+export red1='#d75f5f'
+export green0='#7fa110'
+export green1='#1cab5d'
+export yellow0='#fcba03'
+export yellow1='#ffc54a'
+export blue0='#3685c9'
+export blue1='#4ea5f2'
+export magenta0='#954ea3'
+export magenta1='#a867b5'
+export cyan0='#67b5a5'
+export cyan1='#9cd9d7'
+export white0='#d9d9d9'
+export white1='#ffffff'
+
 export COLORTERM="truecolor"
 
 export ZDOTDIR="$HOME/.config/zsh"
