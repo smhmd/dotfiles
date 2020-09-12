@@ -63,12 +63,11 @@ export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
 # PATH
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+export PATH="$HOME/.local/bin:$PATH" # Local bin
 export PATH="$NPM_PACKAGES/bin:$PATH" # NPM without sudo
 export PATH="$HOME/.basher/bin:$PATH" # Basher
 export PATH="$HOME/.cargo/bin:$PATH" # Cargo
 export PATH="$HOME/.go/bin:$PATH" # Go
-
-eval "$(basher init -)"
 
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
@@ -84,4 +83,4 @@ eval "$(dircolors $HOME/.config/LS_COLORS)"
 
 mkdir -p /tmp/downloads
 [[ ! -L /tmp/downloads/articles ]] && ln -s $HOME/media/articles /tmp/downloads/articles
-[ "$(tty)" = "/dev/tty2" ] && ! pgrep -x Xorg >/dev/null && date +'%d %A %R' && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && date +'%d %A %R' && exec startx
