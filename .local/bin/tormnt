@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+torrent="$1"
+name="$2"
+
+sum="$(echo $torrent | cksum | cut -d' ' -f1)"
+dir="/tmp/btfs/$name$sum"
+
+echo $dir
+
+if [ ! -d "$dir" ]
+then
+  mkdir -p "$dir"
+  btfs --data-directory=/tmp/btfs/data "$torrent" "$dir"
+  cd "$dir"
+fi

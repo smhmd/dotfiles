@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+/usr/local/bin/dmenu -i -fn $font -nb $black0 -nf $white0 -sb $white0 -sf $black0 -bw 1 "$@"
