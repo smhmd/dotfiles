@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Syncs repositories and downloads updates, meant to be run as a cronjob.
+
+/usr/bin/ping -q -c 1 1.1.1.1 > /dev/null || exit
+pacman -Qu | grep -v "\[ignored\]" || exit
+
+sudo pacman -Syyuw --noconfirm || { notify-send "📦Error downloading updates.
+
+Check your internet connection, if pacman is already running, or run update manually to see errors."; exit 1;}
+
+notify-send "📦 Install updats"
