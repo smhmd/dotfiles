@@ -63,7 +63,6 @@
     "page-query": "graphql",
     "static-query": "graphql"
   },
-  "vetur.validation.template": false,
   "eslint.validate": ["javascript", "javascriptreact", "vue"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
@@ -91,5 +90,6 @@
   "window.customMenuBarAltFocus": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "vetur.validation.templateProps": true
 }
