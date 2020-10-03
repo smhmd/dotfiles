@@ -5,9 +5,6 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light hlissner/zsh-autopair
 zinit light MichaelAquilina/zsh-you-should-use
 zinit light zdharma/fast-syntax-highlighting
-if xset q &>/dev/null; then
-  zinit light marzocchi/zsh-notify
-fi
 zinit load agkozak/zsh-z
 zinit load jreese/zsh-titles
 
