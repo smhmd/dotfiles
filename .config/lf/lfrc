@@ -3,7 +3,6 @@ set shellopts --shwordsplit
 set ifs "\n"
 set info size
 set dircounts on
-set color256 on
 set wrapscroll on
 set incsearch on
 set previewer /usr/bin/pistol
