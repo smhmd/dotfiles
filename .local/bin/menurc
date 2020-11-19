@@ -2,7 +2,7 @@
 
 programs='spectrwm\nspectrwm keys\nzsh\nnvim init\nnvim plugins\nnvim keys\nnvim functions\nprofile\naliases\nst\ndmenu\nlf\nxinit\nmpv\nmpv input\nsxhkd\nzathura\ndunst\nzinit\njaro\nhosts'
 
-program="$(echo -e $programs | dmenu -g 3 -l 7 -p 'Open config file for:')"
+program="$(echo -e $programs | dmenu -g 3 -l 7 -p 'Configure:')"
 
 case "$program" in
   spectrwm) st -e nvim "/home/me/.config/spectrwm/spectrwm.conf" ;;
