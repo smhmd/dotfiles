@@ -1,64 +1,55 @@
 {
-	"Template": {
-		"prefix": "template",
-		"body": [
-			"<template>",
-			"$0",
-			"</template>",
-			""
-		],
-		"description": "template"
-	},
-	"Pug Template": {
-		"prefix": "pug",
-		"body": [
-			"<template lang=\"pug\">",
-			"$0",
-			"</template>",
-			""
-		],
-		"description": "template with lang attribute set to pug"
-	},
-	"Script": {
-		"prefix": "script",
-		"body": [
-			"<script>",
-			"export default {",
-			"  $0",
-			"};",
-			"</script>",
-			""
-		],
-		"description": "script"
-	},
-	"Style": {
-		"prefix": "style",
-		"body": [
-			"<style lang=\"postcss\">",
-			"$0",
-			"</style>",
-			""
-		],
-		"description": "script"
-	},
-	"Page Query": {
-		"prefix": "page",
-		"body": [
-			"<static-query>",
-			"query $0",
-			"</static-query>",
-			""
-		],
-		"description": "Static Query"
-	},
-	"Static Query": {
-		"prefix": "static",
-		"body": [
-			"<page-query>",
-			"query $0",
-			"</page-query>",
-			""
-		],
-		"description": "Page Query"
-	},
+  "Template": {
+    "prefix": "template",
+    "body": ["<template>", "$0", "</template>", ""],
+    "description": "template"
+  },
+  "Pug Template": {
+    "prefix": "pug",
+    "body": ["<template lang=\"pug\">", "\t$0", "</template>", ""],
+    "description": "template with lang attribute set to pug"
+  },
+  "TypeScript": {
+    "prefix": "tscript",
+    "body": [
+      "<script lang=\"ts\">",
+      "import { defineComponent } from 'vue';",
+      "",
+      "export default defineComponent({",
+      "  name: \"$TM_FILENAME_BASE\",",
+      "  $0",
+      "});",
+      "</script>",
+      ""
+    ],
+    "description": "script"
+  },
+  "Script": {
+    "prefix": "script",
+    "body": [
+      "<script>",
+      "export default {",
+      "  name: \"$TM_FILENAME_BASE\",",
+      "  $0",
+      "};",
+      "</script>",
+      ""
+    ],
+    "description": "script"
+  },
+  "Style": {
+    "prefix": "style",
+    "body": ["<style lang=\"postcss\">", "$0", "</style>", ""],
+    "description": "script"
+  },
+  "Page Query": {
+    "prefix": "page",
+    "body": ["<static-query>", "query $0", "</static-query>", ""],
+    "description": "Static Query"
+  },
+  "Static Query": {
+    "prefix": "static",
+    "body": ["<page-query>", "query $0", "</page-query>", ""],
+    "description": "Page Query"
+  }
 }
