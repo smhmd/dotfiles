@@ -106,15 +106,5 @@ hash -d videos=$HOME/media/videos
 
 hash -d downloads=/tmp/downloads
 
-# Functions
-function e {
-  if [ $# -eq 0 ]; then
-
-    $EDITOR -c 'e #<1'
-  else
-    $EDITOR "$@"
-  fi
-}
-
 # Plugins
 [ -f "/home/me/.config/zsh/.zinitplugins" ] && source "/home/me/.config/zsh/.zinitplugins"
