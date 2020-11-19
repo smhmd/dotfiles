@@ -68,10 +68,10 @@ XF86MonBrightnessUp
   xbacklight -inc 10
 
 XF86Explorer
-  < ~/.config/sxhkd/regular-text | dmenu -p "type:" -g 2 -l 2 | xargs xdotool type --clearmodifiers
+  < ~/.config/sxhkd/regular-text | dmenu -p "type:" -g 2 -l 3 | xargs xdotool type --clearmodifiers
 
 XF86LaunchA
-  clipmenu
+  copyq toggle
 
 XF86WLAN
   sudo systemctl restart NetworkManager.service
@@ -84,3 +84,6 @@ super + c
 
 XF86Tools
   notify-send "Battery capacity is $(< /sys/class/power_supply/BAT0/capacity || echo '∞')%"
+
+XF86Search
+  /home/me/.local/bin/clipmenu

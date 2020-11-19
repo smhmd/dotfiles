@@ -1,0 +1,41 @@
+#!/usr/bin/env sh
+
+#programs='spectrwm\nspectrwm keys\nzsh\nnvim init\nnvim plugins\nnvim keys\nnvim functions\nprofile\naliases\nst\ndmenu\nlf\nxinit\nmpv\nmpv input\nsxhkd\nzathura\ndunst\nzinit\njaro\nhosts'
+#
+#program="$(echo -e $programs | dmenu -g 3 -l 7 -p 'Configure:')"
+#
+#case "$program" in
+#  spectrwm) st -e nvim "/home/me/.config/spectrwm/spectrwm.conf" ;;
+#  'spectrwm keys') st -e nvim "/home/me/.config/spectrwm/spectrwm_us.conf" ;;
+#  zsh) st -e nvim "$HOME/.config/zsh/.zshrc" ;;
+#  'nvim init') st -e nvim "$HOME/.config/nvim/config/init.vim" ;;
+#  'nvim plugins') st -e nvim "$HOME/.config/nvim/config/plugins.vim" ;;
+#  'nvim keys') st -e nvim "$HOME/.config/nvim/config/keys.vim" ;;
+#  'nvim functions') st -e nvim "$HOME/.config/nvim/config/functions.vim" ;;
+#  profile) st -e nvim "$HOME/.profile" ;;
+#  aliases) st -e nvim "$HOME/.config/aliasrc" ;;
+#  st) st -e nvim "$HOME/.local/src/st/config.h" ;;
+#  dmenu) st -e nvim "$HOME/.local/src/dmenu/config.h" ;;
+#  lf) st -e nvim "$HOME/.config/lf/lfrc" ;;
+#  xinit) st -e nvim "$HOME/.xinitrc" ;;
+#  mpv) st -e nvim "$HOME/.config/mpv/mpv.conf" ;;
+#  'mpv input') st -e nvim "$HOME/.config/mpv/input.conf" ;;
+#  sxhkd) st -e nvim "$HOME/.config/sxhkd/sxhkdrc" ;;
+#  zathura) st -e nvim "$HOME/.config/zathura/zathurarc" ;;
+#  dunst) st -e nvim "$HOME/.config/dunst/dunstrc" ;;
+#  zinit) st -e nvim "$HOME/.config/zsh/.zinitplugins" ;;
+#  jaro) st -e nvim "$HOME/.config/associations" ;;
+#  hosts) st -e sudo vim "/etc/hosts" ;;
+#esac
+
+transformations=$"
+kebabcase\n\
+browser app\n\
+"
+
+transformation="$(echo -e $transformations | dmenu -g 2 -p 'Do:')"
+
+case "$transformation" in
+  'kabebcase') xclip -o | stdrename --text -kq | xclip -selection clipboard && notify-send "clipboard holds:" "$(xclip -o)";;
+  'browser app') xdotool getactivewindow key ctrl+w && setsid $BROWSER --app="$(xclip -o)";;
+esac
