@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-program=$(printf "mpv\\nmpv (loop)\\nbrowser\\nbrowser (guest)\\nbrowser (app)\\nfirefox\\nnvim" | dmenu -l 6 -p "Open link")
+program=$(printf "mpv\\nmpv (loop)\\nbrowser\\nbrowser (guest)\\nbrowser (app)\\nfirefox\\nnvim" | dmenu -g 2 -l 3 -p "Open link")
 
 case "$program" in
 	mpv) setsid mpv -quiet "$1" >/dev/null 2>&1 & ;;
