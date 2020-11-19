@@ -1,4 +1,12 @@
 {
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.vercel": true
+  },
   "workbench.settings.editor": "json",
   "editor.acceptSuggestionOnEnter": "off",
   "editor.formatOnSave": true,
@@ -42,7 +50,9 @@
     ".vuerc": "vue-config",
     "gridsome.config.js": "settings",
     "gridsome.server.js": "json",
-    ".eleventy.js": "json"
+    ".eleventy.js": "json",
+    "database.rules.json": "database",
+    "storage.rules": "firebase"
   },
   "breadcrumbs.symbolPath": "off",
   "material-icon-theme.folders.color": "#464646",
@@ -73,6 +83,9 @@
   "stylelint.enable": true,
   "css.validate": false,
   "tailwindCSS.emmetCompletions": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
