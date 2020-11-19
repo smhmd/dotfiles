@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+zinit light lukechilds/zsh-nvm
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-history-substring-search
 zinit light hlissner/zsh-autopair
