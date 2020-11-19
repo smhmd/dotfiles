@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-exec setsid google-chrome-unstable --app='https://www.figma.com/' 2>&1| notify-pipe
+exec setsid $BROWSER --app='https://www.figma.com/' 2>&1| notify-pipe
