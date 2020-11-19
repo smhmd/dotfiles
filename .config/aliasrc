@@ -6,6 +6,7 @@ alias setsid="setsid -w "
 alias open="xdg-open"
 alias o="<"
 alias se="sudoedit"
+alias e="nvim"
 
 alias refresh="exec -l zsh"
 
