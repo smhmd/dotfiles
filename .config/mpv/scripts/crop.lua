@@ -1,1 +1,1 @@
-/home/me/.config/mpv/scripts_repos/mpv-scripts/scripts/crop.lua
+/home/me/.config/mpv/scripts_repos/occivink-scripts/scripts/crop.lua

@@ -1,0 +1,18 @@
+[submodule ".config/mpv/scripts_repos/autosub"]
+	path = .config/mpv/scripts_repos/autosub
+	url = git@github.com:davidde/mpv-autosub.git
+[submodule ".config/mpv/scripts_repos/easycrop"]
+	path = .config/mpv/scripts_repos/easycrop
+	url = git@github.com:aidanholm/mpv-easycrop.git
+[submodule ".config/mpv/scripts_repos/filenavigator"]
+	path = .config/mpv/scripts_repos/filenavigator
+	url = git@github.com:jonniek/mpv-filenavigator.git
+[submodule ".config/mpv/scripts_repos/occivink-scripts"]
+	path = .config/mpv/scripts_repos/occivink-scripts
+	url = git@github.com:occivink/mpv-scripts.git
+[submodule ".config/mpv/scripts_repos/video-cutter"]
+	path = .config/mpv/scripts_repos/video-cutter
+	url = git@github.com:rushmj/mpv-video-cutter.git
+[submodule ".config/mpv/scripts_repos/webtorrent"]
+	path = .config/mpv/scripts_repos/webtorrent
+	url = git@github.com:noctuid/mpv-webtorrent-hook.git

@@ -1,1 +1,1 @@
-/home/me/.config/mpv/scripts_repos/mpv-filenavigator/navigator.lua
+/home/me/.config/mpv/scripts_repos/filenavigator/navigator.lua

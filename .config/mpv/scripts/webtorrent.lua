@@ -1,1 +1,1 @@
-/home/me/.config/mpv/scripts_repos/mpv-webtorrent-hook/webtorrent-hook.lua
+/home/me/.config/mpv/scripts_repos/webtorrent/webtorrent-hook.lua
