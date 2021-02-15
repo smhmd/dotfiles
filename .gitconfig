@@ -35,3 +35,5 @@
   whitespace = red reverse
 [hub]
 	protocol = ssh
+[alias]
+	lost = !git checkout . && git clean -d -f && :
