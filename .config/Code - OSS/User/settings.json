@@ -21,20 +21,21 @@
     "*.bash*": "shellscript",
     "*.fehbg": "shellscript",
     "config": "shellscript",
-    "*.conf": "shellscript"
+    "*.conf": "shellscript",
+    ".lintstagedrc": "json",
+    ".huskyrc": "json"
   },
   "files.simpleDialog.enable": true,
   "git.defaultCloneDirectory": "~/experiment",
   "search.useGlobalIgnoreFiles": true,
   "explorer.confirmDragAndDrop": false,
   "material-icon-theme.hidesExplorerArrows": true,
-  "editor.snippetSuggestions": "top",
   "explorer.incrementalNaming": "smart",
   "editor.fontFamily": "Iosevka",
   "terminal.integrated.fontFamily": "Iosevka",
   "editor.fontLigatures": true,
   "workbench.iconTheme": "material-icon-theme",
-  "material-icon-theme.activeIconPack": "vue_vuex",
+  "material-icon-theme.activeIconPack": "react",
   "material-icon-theme.folders.associations": {
     "_site": "dist",
     "blog": "content",
@@ -44,20 +45,27 @@
     ".config": "config",
     ".vscode-oss": "vscode",
     "code": "src",
-    "media": "video"
+    "media": "video",
+
+    "inbox": "mail",
+    "application": "app",
+    "session": "secure",
+    "verify": "guard"
   },
   "material-icon-theme.files.associations": {
+    "config.next.js": "vercel",
     ".vuerc": "vue-config",
     "gridsome.config.js": "settings",
     "gridsome.server.js": "json",
     ".eleventy.js": "json",
     "database.rules.json": "database",
-    "storage.rules": "firebase"
+    "storage.rules": "firebase",
+    ".lintstagedrc": "eslint"
   },
   "breadcrumbs.symbolPath": "off",
   "material-icon-theme.folders.color": "#464646",
   "window.menuBarVisibility": "hidden",
-  "workbench.activityBar.visible": false,
+  "workbench.activityBar.visible": true,
   "workbench.startupEditor": "none",
   "extensions.closeExtensionDetailsOnViewChange": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -104,5 +112,15 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "vetur.validation.templateProps": true
+  "vetur.validation.templateProps": true,
+  "tabnine.experimentalAutoImports": true,
+  "workbench.colorTheme": "Default Dark+",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestions": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveshare.presence": true
 }
