@@ -375,6 +375,11 @@
 #    msg_urgency = critical
 #    fullscreen = show
 
+[email]
+    summary = "*@*.com"
+    frame_color = "#d23f31"
+    timeout = 0
+
 #[espeak]
 #    summary = "*"
 #    script = dunst_espeak.sh
