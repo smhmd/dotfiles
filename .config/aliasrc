@@ -30,7 +30,8 @@ alias ll='exa -l --git --group-directories-first'
 alias la='exa -la --git --group-directories-first'
 
 alias pac="sudo pacman -Sy --needed --noconfirm"
-alias pacs="pacman -Sys"
+alias pacs="pacman -Ss"
+alias pacsy="sudo pacman -Sys"
 alias pacy="sudo pacman -Sy"
 alias pacyu="sudo pacman -Syu"
 alias pacr="sudo pacman -R"
