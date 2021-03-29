@@ -5,7 +5,9 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/.vercel": true
+    "**/.vercel": true,
+    "**/.next": true,
+    "**/node_modules": true
   },
   "workbench.settings.editor": "json",
   "editor.acceptSuggestionOnEnter": "off",
@@ -46,6 +48,11 @@
     ".vscode-oss": "vscode",
     "code": "src",
     "media": "video",
+    "types": "typescript",
+    ".next": "temp",
+    "queries": "graphql",
+    "fragments": "graphql",
+    "mutations": "graphql",
 
     "inbox": "mail",
     "application": "app",
@@ -60,7 +67,8 @@
     ".eleventy.js": "json",
     "database.rules.json": "database",
     "storage.rules": "firebase",
-    ".lintstagedrc": "eslint"
+    ".lintstagedrc": "eslint",
+    "next.config.js": "vercel"
   },
   "breadcrumbs.symbolPath": "off",
   "material-icon-theme.folders.color": "#464646",
@@ -81,7 +89,14 @@
     "page-query": "graphql",
     "static-query": "graphql"
   },
-  "eslint.validate": ["javascript", "javascriptreact", "vue"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "typescript",
+    "typescriptreact",
+    "graphql"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -122,5 +137,12 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "liveshare.presence": true
+  "liveshare.presence": true,
+  "cSpell.userWords": [
+    "figma",
+    "outputters",
+    "simohamed",
+    "smhmd",
+    "teenyicons"
+  ]
 }
