@@ -13,9 +13,9 @@
 [submodule ".config/mpv/scripts_repos/video-cutter"]
 	path = .config/mpv/scripts_repos/video-cutter
 	url = git@github.com:rushmj/mpv-video-cutter.git
-[submodule ".config/mpv/scripts_repos/webtorrent"]
-	path = .config/mpv/scripts_repos/webtorrent
-	url = git@github.com:noctuid/mpv-webtorrent-hook.git
 [submodule ".local/src/tmpmail"]
 	path = .local/src/tmpmail
 	url = git@github.com:sdushantha/tmpmail.git
+[submodule ".local/src/jaro"]
+	path = .local/src/jaro
+	url = git@github.com:isamert/jaro.git
