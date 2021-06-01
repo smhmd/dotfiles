@@ -8,6 +8,7 @@ zinit light MichaelAquilina/zsh-you-should-use
 zinit light zdharma/fast-syntax-highlighting
 zinit load agkozak/zsh-z
 zinit load jreese/zsh-titles
+zinit load marzocchi/zsh-notify
 
 zstyle ':notify:*' notifier ~/.local/bin/zsh-notify
 zstyle ':notify:*' command-complete-timeout 10

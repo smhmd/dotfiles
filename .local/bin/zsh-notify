@@ -3,8 +3,8 @@
 stdin=$(</dev/stdin)
 
 if [ "$1" == 'success' ]; then
-   notify-send -u low "$stdin" "$2s" -i ~/.assets/st.svg
+   notify-send "$stdin" "$2s" -i ~/media/pix/assets/st-sucess.svg
 elif [ "$1" == 'error' ]; then
-   notify-send "$stdin" "$2s"  -u critical -i ~/.assets/st.svg
+   notify-send "$stdin" "$2s"  -u critical -i ~/media/pix/assets/st-error.svg
 fi
 
