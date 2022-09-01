@@ -301,8 +301,8 @@
 
 [urgency_critical]
     background = "#1c1c1c"
-    foreground = "#fcba03"
-    frame_color = "#ffffff"
+    foreground = "#cc3833"
+    frame_color = "#cc3833"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
@@ -379,6 +379,16 @@
     summary = "*@*.com"
     frame_color = "#d23f31"
     timeout = 0
+
+[battery]
+    summary = "*Unplug charger*"
+    frame_color = "#7fa110"
+    foreground = "#7fa110"
+
+[omegle]
+    summary = "*from Stranger*"
+    history_ignore = yes
+    timeout = 2
 
 #[espeak]
 #    summary = "*"

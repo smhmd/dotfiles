@@ -1,8 +1,8 @@
 {
   "downloadLocation": "/home/me/media/music",
-  "tracknameTemplate": "%artist% - %title%",
+  "tracknameTemplate": "%title%",
   "albumTracknameTemplate": "%tracknumber% - %title%",
-  "playlistTracknameTemplate": "%position% - %artist% - %title%",
+  "playlistTracknameTemplate": "%position% - %title%",
   "createPlaylistFolder": true,
   "playlistNameTemplate": "%playlist%",
   "createArtistFolder": true,
@@ -35,13 +35,13 @@
   "artistImageTemplate": "folder",
   "jpegImageQuality": 80,
   "dateFormat": "Y-M-D",
-  "albumVariousArtists": true,
+  "albumVariousArtists": false,
   "removeAlbumVersion": true,
   "removeDuplicateArtists": true,
-  "featuredToTitle": "0",
+  "featuredToTitle": "3",
   "titleCasing": "lower",
   "artistCasing": "lower",
-  "executeCommand": "",
+  "executeCommand": "notify-send \"deezer is done\"",
   "tags": {
     "title": true,
     "artist": true,
@@ -55,7 +55,7 @@
     "genre": true,
     "year": true,
     "date": true,
-    "explicit": false,
+    "explicit": true,
     "isrc": true,
     "length": true,
     "barcode": true,
@@ -64,13 +64,18 @@
     "label": true,
     "lyrics": true,
     "copyright": false,
-    "composer": false,
+    "composer": true,
     "involvedPeople": false,
     "savePlaylistAsCompilation": false,
     "useNullSeparator": false,
     "saveID3v1": true,
     "multiArtistSeparator": "default",
-    "singleAlbumArtist": true
+    "singleAlbumArtist": true,
+    "syncedLyrics": true,
+    "source": false,
+    "coverDescriptionUTF8": false,
+    "rating": false
   },
-  "embeddedArtworkPNG": false
+  "embeddedArtworkPNG": false,
+  "tagsLanguage": ""
 }

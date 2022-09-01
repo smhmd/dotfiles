@@ -1,6 +1,6 @@
 [user]
   email = contact.simohamed@gmail.com
-  name = smhmd
+  name = Simohamed
 
 [color]
   diff = auto
@@ -37,3 +37,10 @@
 	protocol = ssh
 [alias]
 	lost = !git checkout . && git clean -d -f && :
+	scorch = "!f() {echo 'hi'}; f"
+[pull]
+	rebase = true
+[init]
+	defaultBranch = develop
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

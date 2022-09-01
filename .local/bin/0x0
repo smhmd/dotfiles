@@ -1,5 +1,5 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 [[ -z "$1" ]] && { echo "Error: empty input file" ; exit 1; }
 
-curl -F "file=@$1" https://0x0.st
+curl -sF "file=@$1" https://0x0.st

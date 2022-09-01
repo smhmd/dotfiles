@@ -22,6 +22,9 @@ super + l
 XF86Display
   maim --hidecursor --shader=crosshair -s | xclip -selection clipboard -t image/png
 
+super + XF86Display
+  maim --shader=crosshair | xclip -selection clipboard -t image/png
+
 shift + XF86Display
   maim -s --hidecursor --shader=crosshair /home/me/media/pix/screenshots/$(date +%s).png
 
@@ -55,19 +58,22 @@ super + {Left, Right, Down, Up}
 super + {minus, plus}
   playerctl volume {0.1-, 0.1+}
 
-XF86AudioLowerVolume
-  amixer set Master 2-
+XF86Audio{Raise,Lower}Volume
+  pactl set-sink-volume @DEFAULT_SINK@ {+,-}2%
 
-XF86AudioRaiseVolume
-  amixer set Master 2+
+super + XF86Audio{Raise,Lower}Volume
+  pactl set-sink-volume @DEFAULT_SINK@ {100,0}%
 
-XF86MonBrightnessDown
-  xbacklight -dec 9
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-XF86MonBrightnessUp
-  xbacklight -inc 10
+XF86AudioMicMute
+  pactl set-source-mute  @DEFAULT_SOURCE@ toggle
 
-XF86Explorer
+XF86MonBrightness{Up,Down}
+  xbacklight -{inc 1,dec 10}
+
+super + F2
   < ~/.config/sxhkd/regular-text | dmenu -p "type:" -g 2 -l 4 | xargs xdotool type --clearmodifiers
 
 XF86LaunchA
@@ -76,14 +82,24 @@ XF86LaunchA
 XF86WLAN
   sudo systemctl restart NetworkManager.service
 
+super + g
+  $BROWSER --force-dark-mode
+
+super + shift + g
+  $BROWSER --force-dark-mode --profile-directory=Default
+
 super + c
   menurc
 
-#XF86AudioMicMute
-  #  notify-send "Volume is $()%"
+super + o
+  xdg-open `xclip -o`
 
 XF86Tools
   notify-send "Battery capacity is $(< /sys/class/power_supply/BAT0/capacity || echo '∞')%"
 
 XF86Search
   /home/me/.local/bin/clipmenu
+
+super + shift + l
+  /home/me/.local/bin/li
+

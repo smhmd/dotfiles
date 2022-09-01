@@ -3,7 +3,7 @@
 alias sudo="sudo "
 alias setsid="setsid -w "
 
-alias open="xdg-open"
+alias open="setsid xdg-open"
 alias o="<"
 alias se="sudoedit"
 alias e="nvim"
@@ -14,13 +14,14 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias dottig='GIT_DIR=$HOME/.dotfiles GIT_WORK_TREE=$HOME tig'
 
 alias -s git="git clone --depth 1"
-alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
-alias -s {jpg,jpeg,png,mng,tiff,tif,xpm}=$XIVIEWER
-alias -s {htm,html,de,org,net,com,at,cx,nl,se,dk}=$BROWSER
+alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm,pls}="setsid mpv"
+alias -s {jpg,jpeg,png,mng,tiff,tif,xpm}="setsid $XIVIEWER"
+alias -s gif="setsid $XIVIEWER -a"
+alias -s {htm,html,de,org,net,com,at,cx,nl,se,dk}="setsid $BROWSER"
 alias -s {cpp,cxx,cc,c,hh,h,inl,asc,md,txt,TXT,tex,conf,config}=nvim
+alias -s {pdf,epub,mobi}="setsid zathura"
 alias -s py="python"
-alias -s pdf="zathura"
-alias -s gif="$XIVIEWER -a"
+alias -s exe="setsid wine"
 
 alias cp="cp -i"
 alias df='df -h'
@@ -37,19 +38,23 @@ alias pacyu="sudo pacman -Syu"
 alias pacr="sudo pacman -R"
 alias pacrns="sudo pacman -Rns"
 
-alias aur="yay -S --needed --noconfirm"
+alias aur="sudo echo '' && yay -S --needed --noconfirm"
 alias aurs="yay -Ss"
 alias aury="yay -Sy"
-alias auryu="yay -Syu --devel"
-alias auryun="yay -Syu --devel --noconfirm"
+alias auryu="sudo echo '' && yay -Syu --devel"
+alias auryun="sudo echo '' && yay -Syu --devel --noconfirm"
 alias aurr="yay -R"
 alias aurrns="yay -Rns --noconfirm"
 
 alias aria="aria2c -x8 --allow-overwrite"
-alias cn="ping -c 2 google.com"
+alias cn="until ping -c 1 google.com; do sleep 1; done"
 alias fan="cat -p /proc/acpi/ibm/fan"
-alias c.="code . && exit"
+alias c.="$CODE . && exit"
+alias whereami="curl ipinfo.io/country"
 
 alias yaourt="yay"
 alias hc="sudo hostctl"
 alias sv="sudo sv"
+alias ss="systemctl suspend && exit"
+
+alias de="decodable"

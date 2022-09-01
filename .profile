@@ -2,8 +2,9 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
+export CODE="code"
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="google-chrome-stable"
 export READER="zathura"
 export FILE="lf"
 export STATUSBAR="dwmbar"
@@ -61,13 +62,24 @@ export NPM_PACKAGES="${HOME}/.npm-packages"
 export prefix="${HOME}/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 
-# PATH
+# PATH & FPATH
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 export PATH="$HOME/.local/bin:$PATH" # Local bin
+export PATH="/home/me/.local/bin/android-apps:$PATH" # Android apps
 export PATH="$NPM_PACKAGES/bin:$PATH" # NPM without sudo
 export PATH="$HOME/.basher/bin:$PATH" # Basher
 export PATH="$HOME/.cargo/bin:$PATH" # Cargo
 export PATH="$HOME/.go/bin:$PATH" # Go
+export PATH="$(ruby -e 'puts Gem.user_dir'):$PATH" # Ruby
+
+export FPATH="$HOME/.local/bin:$FPATH" # Local bin (FPATH)
+
+# Flutter/Android
+export ANDROID_SDK_ROOT='/opt/android-sdk'
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
+export PATH=$ANDROID_SDK_ROOT/emulator:$PATH
 
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
@@ -79,8 +91,10 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-r
 
+export OPENAUDIBLE_HOME="$HOME/media/audiobooks"
+
 eval "$(dircolors $HOME/.config/LS_COLORS)"
 
 mkdir -p /tmp/downloads
 [[ ! -L /tmp/downloads/articles ]] && ln -s $HOME/media/articles /tmp/downloads/articles
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && date +'%d %A %R' && exec startx
+[ "$(tty)" = "/dev/tty2" ] && ! pgrep -x Xorg >/dev/null && date +'%d %A %R' && exec startx

@@ -1,7 +1,7 @@
 echo -ne '\e[5 q'
 
 # Prompt
-PROMPT="%F{blue}%~ "
+PROMPT="%F{blue}%~ %F{white}%"
 
 # History
 HISTFILE=~/.cache/zsh/history
@@ -49,15 +49,18 @@ if [[ ! -f $HOME/.config/zsh/.zinit/bin/zinit.zsh ]]; then
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
+fpath=(~/.zsh $fpath)
 source "$HOME/.config/zsh/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit compinit colors
+autoload -Uz _zinit compinit colors add-zsh-hook
+
 (( ${+_comps} )) && _comps[zinit]=_zinit
 # Check completion once a day https://gist.github.com/ctechols/ca1035271ad134841284
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
+	compinit -i;
 else
 	compinit -C;
 fi;
+
 
 
 # Keybindings
@@ -91,8 +94,8 @@ hash -d src=$HOME/.local/src
 hash -d b=$HOME/build
 hash -d m=$HOME/media
 
-hash -d projects=$HOME/projects
-hash -d articles=$HOME/media/articles
+hash -d archive=$HOME/media/archive
+hash -d audiobooks=$HOME/media/audiobooks
 hash -d books=$HOME/media/books
 hash -d courses=$HOME/media/courses
 hash -d film=$HOME/media/film
@@ -100,10 +103,12 @@ hash -d lectures=$HOME/media/lectures
 hash -d music=$HOME/media/music
 hash -d pix=$HOME/media/pix
 hash -d podcasts=$HOME/media/podcasts
+hash -d scenes=$HOME/media/scenes
 hash -d talks=$HOME/media/talks
 hash -d tv=$HOME/media/tv
 hash -d videos=$HOME/media/videos
 
+hash -d projects=$HOME/projects
 hash -d downloads=/tmp/downloads
 
 # Plugins

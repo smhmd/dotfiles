@@ -1,4 +1,6 @@
 [v1]
-"stdrename 1.3.0 (git+https://github.com/Gadiguibou/stdrename#a771f1558ef61cccee4d57c37b9c0674d20ee6ae)" = ["stdrename"]
+"as-tree 0.12.0 (git+https://github.com/jez/as-tree#0036c20f66795774eb9cda3ccbae6ca1e1c19444)" = ["as-tree"]
+"spr 1.1.0 (path+file:///home/me/.local/src/spr)" = ["spr"]
+"stdrename 1.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["stdrename"]
 "tealdeer 1.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["tldr"]
 "tpfancontrol 0.1.0 (git+https://github.com/Arnavion/tpfancontrol-rs#7219ad6fb239300e7bfa6286b6070434bf15b427)" = ["tpfancontrol"]

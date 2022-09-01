@@ -5,8 +5,8 @@
 /usr/bin/ping -q -c 1 1.1.1.1 > /dev/null || exit
 pacman -Qu | grep -v "\[ignored\]" || exit
 
-sudo pacman -Syyuw --noconfirm || { notify-send "📦Error downloading updates.
+sudo pacman -Syu --noconfirm || { notify-send "📦Error downloading updates.
 
-Check your internet connection, if pacman is already running, or run update manually to see errors."; exit 1;}
+Check your internet connection, or that pacman is already running, or run update manually to see errors."; exit 1;} &&
 
-notify-send "📦 Install updats"
+notify-send "📦 Updates downloaded successfully"

@@ -6,6 +6,7 @@ set dircounts on
 set wrapscroll on
 set incsearch on
 set previewer /usr/bin/pistol
+# set mouse on
 
 # Unmap
 map c
@@ -22,8 +23,7 @@ map .l cd ~/.local/bin
 
 # media
 map gG cd ~/media
-map ga cd ~/media/articles
-map gk cd ~/media/audiobooks
+map ga cd ~/media/audiobooks
 map gb cd ~/media/books
 map gc cd ~/media/courses
 map gf cd ~/media/film
@@ -34,6 +34,7 @@ map gp cd ~/media/papers
 map gx cd ~/media/pix
 map go cd ~/media/podcasts
 map gw cd ~/media/pix/wallpapers
+map gs cd ~/media/synced-books
 map gt cd ~/media/tv
 map gv cd ~/media/videos
 
@@ -44,6 +45,10 @@ map ,m cd /run/media/me
 
 # map actions
 map <enter> open
+map <m-1> open
+map <m-3> updir
+map <m-up> up
+map <m-down> down
 map <tab> mark-load
 map ` mark-save
 map <esc> clear

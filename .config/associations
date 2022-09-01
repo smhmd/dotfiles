@@ -28,7 +28,7 @@
 
 (assoc
   #:pattern "^audio/.*"
-  #:program "mpv %f"
+  #:program "mpv --profile=builtin-pseudo-gui %f"
 )
 
 (assoc
@@ -38,7 +38,7 @@
 
 (assoc
   #:pattern "^image/.*"
-  #:program "sxiv %f"
+  #:program "rotdir %f | sxiv -aio"
 )
 
 (assoc
@@ -75,3 +75,30 @@
   #:pattern "^https?://.*"
   #:program "url-handler %f"
 )
+
+(assoc
+  #:pattern "^coursehunter://.*"
+  #:program "coursehunter %f"
+)
+
+(assoc
+  #:pattern "^audio/x-scpls$"
+  #:program "mpv --pause --prefetch-playlist --playlist=%f --af=scaletempo2 --speed=2"
+)
+
+(assoc
+  #:pattern "^magnet:*"
+  #:program "magnet-log %f; mpv --pause --prefetch-playlist %f"
+)
+
+(assoc
+  #:pattern "^tel:*"
+  #:program "tel2whatsapp %f"
+)
+
+(assoc
+  #:pattern "^application/x-bittorrent$"
+  #:program "qbittorrent %f"
+)
+
+

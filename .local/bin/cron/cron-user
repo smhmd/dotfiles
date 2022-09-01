@@ -1,2 +1,0 @@
-DISPLAY=:1
-* * * * * /home/me/.local/bin/cron/batterycheck

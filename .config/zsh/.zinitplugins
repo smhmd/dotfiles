@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-zinit light lukechilds/zsh-nvm
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search
 zinit light hlissner/zsh-autopair
 zinit light MichaelAquilina/zsh-you-should-use
@@ -10,10 +10,22 @@ zinit load agkozak/zsh-z
 zinit load jreese/zsh-titles
 zinit load marzocchi/zsh-notify
 
+autoload -U deer; zle -N deer; bindkey '\ek' deer
+
 zstyle ':notify:*' notifier ~/.local/bin/zsh-notify
 zstyle ':notify:*' command-complete-timeout 10
 
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+add-zsh-hook -Uz chpwd (){
+  [ -d "node_modules" ] &&
+  bin=$PWD/node_modules/.bin
+  if [[ ":$PATH:" != *":$bin:"* ]]; then     # check if $bin is already in $PATH
+    export PATH=$bin:$PATH                   # prepend $bin to $PATH
+  fi
+}
+
+eval "$(fnm env --use-on-cd)" # https://github.com/Schniz/fnm#shell-setup
 
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
